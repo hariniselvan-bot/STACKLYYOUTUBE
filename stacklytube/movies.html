@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stackly Header</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Outfit',sans-serif;
+}
+
+body{
+background:#0d0d0d;
+}
+
+/* HEADER */
+
+header{
+width:100%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:20px 80px;
+background:rgba(0,0,0,0.65);
+backdrop-filter:blur(12px);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+/* LOGO */
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:34px;
+font-weight:600;
+color:white;
+}
+
+.logo-icon{
+width:36px;
+height:36px;
+border-radius:10px;
+background:linear-gradient(45deg,#7c3aed,#ff3e7f);
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+}
+
+/* NAV */
+
+nav ul{
+display:flex;
+list-style:none;
+gap:40px;
+align-items:center;
+}
+
+nav ul li{
+position:relative;
+}
+
+nav ul li a{
+display:flex;
+align-items:center;
+gap:8px;
+text-decoration:none;
+color:#e4e4e4;
+font-size:16px;
+font-weight:500;
+cursor:pointer;
+}
+
+/* DROPDOWN */
+
+.dropdown{
+position:absolute;
+top:100%;
+left:0;
+background:#111;
+padding:18px;
+border-radius:10px;
+display:none;
+flex-direction:column;
+gap:12px;
+min-width:160px;
+box-shadow:0 10px 40px rgba(0,0,0,0.7);
+}
+
+/* DESKTOP HOVER */
+
+@media(min-width:901px){
+
+nav ul li:hover > .dropdown{
+display:flex;
+}
+
+}
+
+/* MOBILE DROPDOWN */
+
+.dropdown.active{
+display:flex;
+}
+
+/* RIGHT SIDE */
+
+.right{
+display:flex;
+align-items:center;
+gap:30px;
+}
+
+.search{
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+.contact{
+background:linear-gradient(90deg,#7c3aed,#ff3e7f);
+padding:12px 26px;
+border-radius:35px;
+color:white;
+font-size:15px;
+font-weight:600;
+display:flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+}
+
+.hamburger{
+display:none;
+font-size:24px;
+color:white;
+cursor:pointer;
+}
+
+/* MOBILE FULL SCREEN MENU */
+
+.mobile-menu{
+position:fixed;
+top:0;
+left:-100%;
+width:100%;
+height:100vh;
+background:linear-gradient(160deg,#0b0b0b,#1a0033,#2a001d);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+transition:.4s;
+z-index:2000;
+}
+
+.mobile-menu.active{
+left:0;
+}
+
+.mobile-menu ul{
+list-style:none;
+text-align:center;
+}
+
+.mobile-menu li{
+margin:20px 0;
+}
+
+.mobile-menu a{
+color:white;
+font-size:26px;
+text-decoration:none;
+display:flex;
+align-items:center;
+gap:10px;
+justify-content:center;
+}
+
+.mobile-dropdown{
+display:none;
+margin-top:10px;
+}
+
+.mobile-dropdown a{
+display:block;
+font-size:18px;
+color:#ddd;
+margin:8px 0;
+}
+
+.mobile-dropdown.active{
+display:block;
+}
+
+.close{
+position:absolute;
+top:30px;
+right:35px;
+font-size:30px;
+color:white;
+cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+header{
+padding:20px 25px;
+}
+
+nav,
+.search,
+.contact{
+display:none;
+}
+
+.hamburger{
+display:block;
+}
+
+.logo{
+font-size:26px;
+}
+
+}
+.logo img{
+height: 60px;;
+width:auto;
+object-fit:contain;
+
+/* double shade effect */
+filter:
+drop-shadow(0 0 3px #7c3aed)
+drop-shadow(0 0 6px #ff3e7f);
+
+transition:0.3s;
+}
+
+/* hover glow */
+.logo img:hover{
+filter:
+drop-shadow(0 0 6px #7c3aed)
+drop-shadow(0 0 12px #ff3e7f);
+}
+</style>
+</head>
+<body>
+
+<header>
+
+<div class="logo">
+<img src="logo.webp" alt="Stackly Logo">
+</div>
+
+<nav id="navMenu">
+<ul>
+
+<li>
+<a onclick="toggleDropdown(this)">
+<i class="fa-solid fa-house"></i> HOME <i class="fa-solid fa-chevron-down"></i>
+</a>
+
+<div class="dropdown">
+<a href="home.html">Home 1</a>
+<a href="home2.html">Home 2</a>
+</div>
+
+</li>
+
+<li>
+<a href="movies.html" style="color: #ff3e7f;"><i class="fa-solid fa-film"></i> MOVIES</a>
+</li>
+
+<li>
+<a href="about.html"><i class="fa-solid fa-heart"></i> ABOUT US</a>
+</li>
+
+<li>
+<a href="pages.html"><i class="fa-solid fa-file"></i> DASHBOARD</a>
+</li>
+
+<li>
+<a href="shop.html"><i class="fa-solid fa-bag-shopping"></i> SHOP</a>
+</li>
+
+<li>
+<a href="contact.html"><i class="fa-solid fa-newspaper"></i> CONTACT US</a>
+</li>
+
+</ul>
+</nav>
+
+<div class="right">
+
+<i class="fa-solid fa-magnifying-glass search"></i>
+
+<a href="login.html" class="contact">
+<i class="fa-solid fa-crown"></i>
+LOGIN NOW
+</a>
+
+<div class="hamburger" onclick="openMenu()">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+</div>
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+<div class="close" onclick="closeMenu()">
+<i class="fa-solid fa-xmark"></i>
+</div>
+
+<ul>
+
+<li>
+
+<a onclick="toggleMobileDropdown()">
+<i class="fa-solid fa-house"></i> HOME
+</a>
+
+<div class="mobile-dropdown" id="mobileDrop">
+<a href="home.html">Home 1</a>
+<a href="home2.html">Home 2</a>
+</div>
+
+</li>
+
+<li><a href="movies.html"><i class="fa-solid fa-film"></i> MOVIES</a></li>
+<li><a href="about.html"><i class="fa-solid fa-heart"></i> ABOUT US</a></li>
+<li><a href="pages.html"><i class="fa-solid fa-file"></i> DASHBOARD</a></li>
+<li><a href="shop.html"><i class="fa-solid fa-bag-shopping"></i> SHOP</a></li>
+<li><a href="contact.html"><i class="fa-solid fa-bag-shopping"></i> CONTACT US</a></li>
+<li><a href="login.html"><i class="fa-solid fa-newspaper"></i> LOGIN</a></li>
+
+</ul>
+
+</div>
+
+<script>
+
+function toggleDropdown(element){
+
+if(window.innerWidth <= 900){
+
+let dropdown = element.nextElementSibling;
+dropdown.classList.toggle("active");
+
+}
+
+}
+
+function openMenu(){
+document.getElementById("mobileMenu").classList.add("active");
+}
+
+function closeMenu(){
+document.getElementById("mobileMenu").classList.remove("active");
+}
+
+function toggleMobileDropdown(){
+document.getElementById("mobileDrop").classList.toggle("active");
+}
+
+</script>
+
+<section class="stackly-movie-cta">
+
+<div class="stackly-cta-overlay"></div>
+
+<div class="stackly-cta-content">
+
+<h1>WATCH NOW</h1>
+
+<p>
+Stream the latest blockbuster movies anytime, anywhere. 
+Watch instantly or buy your favorite films in HD quality.
+</p>
+
+<div class="stackly-cta-buttons">
+
+<a href="404.html" class="stackly-watch-btn">
+<i class="fa-solid fa-play"></i> Watch Movie
+</a>
+
+<a href="404.html" class="stackly-buy-btn">
+<i class="fa-solid fa-ticket"></i> Buy Movie
+</a>
+
+</div>
+
+</div>
+
+</section>
+<style>
+    .stackly-movie-cta{
+background-image:url("pos2.webp");
+}
+    .stackly-movie-cta{
+position:relative;
+height:500px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+font-family:Poppins;
+overflow:hidden;
+
+/* you will add your image here */
+background-size:cover;
+background-position:center;
+}
+
+/* dark overlay */
+
+.stackly-cta-overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.65);
+}
+
+/* content */
+
+.stackly-cta-content{
+position:relative;
+max-width:700px;
+padding:20px;
+}
+
+.stackly-cta-content h1{
+font-size:70px;
+font-weight:700;
+letter-spacing:3px;
+margin-bottom:20px;
+}
+
+.stackly-cta-content p{
+font-size:18px;
+color:#d1d5db;
+margin-bottom:30px;
+}
+
+/* buttons */
+
+.stackly-cta-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+.stackly-watch-btn{
+background:#000;
+padding:14px 30px;
+border-radius:8px;
+text-decoration:none;
+color:white;
+font-size:16px;
+transition:0.3s;
+}
+
+.stackly-buy-btn{
+background:#c52294;
+padding:14px 30px;
+border-radius:8px;
+text-decoration:none;
+color:white;
+font-size:16px;
+transition:0.3s;
+}
+
+.stackly-watch-btn:hover{
+background:#111;
+}
+
+.stackly-buy-btn:hover{
+background:#5d1935;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<section class="stackly-movie-section">
+
+<div class="stackly-row-header">
+<h2>Kids Movies</h2>
+</div>
+
+<div class="stackly-movie-slider">
+
+<div class="stackly-movie-card">
+<img src="di.webp">
+<div class="stackly-movie-info">
+<h4>KUNG FU PANDA</h4>
+<span>⭐ 8.5</span>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="di1.webp">
+<div class="stackly-movie-info">
+<h4>FROZEN</h4>
+<span>⭐ 8.2</span>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="di3.webp">
+<div class="stackly-movie-info">
+<h4>TOY STORY</h4>
+<span>⭐ 8.6</span>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="di4.webp">
+<div class="stackly-movie-info">
+<h4>SPACE HERO</h4>
+<span>⭐ 7.9</span>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="di5.webp">
+<div class="stackly-movie-info">
+<h4>DRAGON HERO</h4>
+<span>⭐ 8.0</span>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="di6.webp">
+<div class="stackly-movie-info">
+<h4>JUNGLE QUEST</h4>
+<span>⭐ 7.8</span>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="di7.webp">
+<div class="stackly-movie-info">
+<h4>MAGIC WORLD</h4>
+<span>⭐ 8.3</span>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="di8.webp">
+<div class="stackly-movie-info">
+<h4>HERO KIDS</h4>
+<span>⭐ 7.7</span>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+/* section */
+
+.stackly-movie-section{
+padding:90px 7%;
+background:URL("bg.jpg") center/cover no-repeat;
+font-family:Poppins;
+color:white;
+}
+/* section animation */
+
+.stackly-movie-section{
+opacity:0;
+transform:translateX(150px);
+transition:all 0.9s ease;
+}
+
+/* when visible */
+
+.stackly-movie-section.show{
+opacity:1;
+transform:translateX(0);
+}
+/* header */
+
+.stackly-row-header h2{
+font-size:38px;
+margin-bottom:35px;
+letter-spacing:1px;
+}
+
+/* slider */
+
+.stackly-movie-slider{
+display:flex;
+gap:28px;
+overflow-x:auto;
+padding-bottom:14px;
+scroll-behavior:smooth;
+}
+
+/* underline scrollbar */
+
+.stackly-movie-slider::-webkit-scrollbar{
+height:6px;
+}
+
+.stackly-movie-slider::-webkit-scrollbar-track{
+background:#111;
+border-radius:10px;
+}
+
+.stackly-movie-slider::-webkit-scrollbar-thumb{
+background:#ff004c;
+border-radius:10px;
+}
+
+/* movie card */
+
+.stackly-movie-card{
+position:relative;
+min-width:260px;
+height:380px;
+border-radius:18px;
+overflow:hidden;
+cursor:pointer;
+transition:.4s;
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
+
+.stackly-movie-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.6s;
+}
+
+/* hover */
+
+.stackly-movie-card:hover{
+transform:scale(1.1);
+}
+
+.stackly-movie-card:hover img{
+transform:scale(1.15);
+}
+
+/* overlay */
+
+.stackly-movie-info{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:20px;
+background:linear-gradient(to top,rgba(0,0,0,0.95),transparent);
+}
+
+.stackly-movie-info h4{
+font-size:18px;
+margin-bottom:6px;
+}
+
+.stackly-movie-info span{
+font-size:14px;
+color:#22c55e;
+}
+
+/* mobile */
+
+@media(max-width:768px){
+
+.stackly-movie-section{
+padding:60px 20px;
+}
+
+.stackly-row-header h2{
+font-size:24px;
+}
+
+.stackly-movie-slider{
+flex-direction:column;
+gap:25px;
+overflow:visible;
+}
+
+.stackly-movie-card{
+min-width:100%;
+height:300px;
+}
+/* header layout */
+
+.stackly-row-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+/* title */
+
+.stackly-row-header h2{
+font-size:30px;
+font-weight:600;
+}
+
+/* view all button */
+
+.stackly-view-all{
+text-decoration:none;
+font-size:14px;
+color:#aaa;
+position:relative;
+transition:.3s;
+}
+
+/* underline animation */
+
+.stackly-view-all::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-4px;
+width:0%;
+height:2px;
+background:#ff004c;
+transition:.3s;
+}
+
+.stackly-view-all:hover{
+color:white;
+}
+
+.stackly-view-all:hover::after{
+width:100%;
+}
+}
+
+</style>
+<section class="stackly-movie-section">
+
+<div class="stackly-row-header">
+<h2>Adventure Movies</h2>
+<a href="404.html" class="stackly-view-all">View All</a>
+</div>
+
+<div class="stackly-slider-wrapper">
+
+<button class="stackly-arrow left">&#10094;</button>
+
+<div class="stackly-movie-slider">
+
+<div class="stackly-movie-card">
+<img src="frozen.webp">
+<div class="stackly-movie-info">
+<h4>JUNGLE CRUISE</h4>
+<div class="stackly-rating">⭐ 7.9</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="KUNG.webp">
+<div class="stackly-movie-info">
+<h4>INDIANA JONES</h4>
+<div class="stackly-rating">⭐ 8.4</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="toy.webp">
+<div class="stackly-movie-info">
+<h4>THE MUMMY</h4>
+<div class="stackly-rating">⭐ 7.8</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="SPACE.webp">
+<div class="stackly-movie-info">
+<h4>JURASSIC PARK</h4>
+<div class="stackly-rating">⭐ 8.6</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="sv8.webp">
+<div class="stackly-movie-info">
+<h4>PIRATES</h4>
+<div class="stackly-rating">⭐ 8.2</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="coco.webp">
+<div class="stackly-movie-info">
+<h4>AVATAR</h4>
+<div class="stackly-rating">⭐ 8.7</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="di6.webp">
+<div class="stackly-movie-info">
+<h4>KONG ISLAND</h4>
+<div class="stackly-rating">⭐ 7.7</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="di2.webp">
+<div class="stackly-movie-info">
+<h4>THE LOST CITY</h4>
+<div class="stackly-rating">⭐ 7.6</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="di5.webp">
+<div class="stackly-movie-info">
+<h4>TOMB RAIDER</h4>
+<div class="stackly-rating">⭐ 7.9</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<div class="stackly-movie-card">
+<img src="frozen.webp">
+<div class="stackly-movie-info">
+<h4>UNCHARTED</h4>
+<div class="stackly-rating">⭐ 8.0</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+</div>
+
+<button class="stackly-arrow right">&#10095;</button>
+
+</div>
+<style>
+    .stackly-row-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+flex-wrap:nowrap;
+}
+
+.stackly-row-header h2{
+font-size:30px;
+white-space:nowrap;
+}
+
+.stackly-view-all{
+text-decoration:none;
+font-size:14px;
+color:#aaa;
+transition:.3s;
+}
+
+.stackly-view-all:hover{
+color:#fff;
+}
+.stackly-arrow{
+display:none;
+}
+@media (max-width:768px){
+
+.stackly-row-header{
+padding:0 5px;
+}
+
+.stackly-row-header h2{
+font-size:24px;
+}
+
+.stackly-view-all{
+font-size:13px;
+}
+
+/* movie slider becomes vertical */
+
+.stackly-movie-slider{
+flex-direction:column;
+gap:20px;
+overflow:visible;
+}
+
+/* movie card */
+
+.stackly-movie-card{
+min-width:100%;
+height:300px;
+}
+
+}
+</style>
+</section>
+<section class="stackly-movie-section">
+
+<div class="stackly-row-header">
+<h2>Ghost Movies</h2>
+<a href="404.html" class="stackly-view-all">View All</a>
+</div>
+<div class="stackly-slider-wrapper">
+
+<button class="stackly-arrow left">&#10094;</button>
+
+<div class="stackly-movie-slider">
+
+<!-- 1 -->
+<div class="stackly-movie-card">
+<img src="pos1.webp">
+<div class="stackly-movie-info">
+<h4>Movie Title</h4>
+<div class="stackly-rating">⭐ 7.8</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="stackly-movie-card">
+<img src="pos2.webp">
+<div class="stackly-movie-info">
+<h4>Movie Title</h4>
+<div class="stackly-rating">⭐ 8.1</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="stackly-movie-card">
+<img src="pos3.webp">
+<div class="stackly-movie-info">
+<h4>Movie Title</h4>
+<div class="stackly-rating">⭐ 7.5</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="stackly-movie-card">
+<img src="pos4.webp">
+<div class="stackly-movie-info">
+<h4>Movie Title</h4>
+<div class="stackly-rating">⭐ 8.2</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="stackly-movie-card">
+<img src="pos5.webp">
+<div class="stackly-movie-info">
+<h4>Movie Title</h4>
+<div class="stackly-rating">⭐ 7.9</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="stackly-movie-card">
+<img src="pos6.webp">
+<div class="stackly-movie-info">
+<h4>Movie Title</h4>
+<div class="stackly-rating">⭐ 8.0</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="stackly-movie-card">
+<img src="pos7.webp">
+<div class="stackly-movie-info">
+<h4>Movie Title</h4>
+<div class="stackly-rating">⭐ 7.6</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="stackly-movie-card">
+<img src="pos8.webp">
+<div class="stackly-movie-info">
+<h4>Movie Title</h4>
+<div class="stackly-rating">⭐ 8.3</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="stackly-movie-card">
+<img src="pos1.webp">
+<div class="stackly-movie-info">
+<h4>Movie Title</h4>
+<div class="stackly-rating">⭐ 7.7</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="stackly-movie-card">
+<img src="pos2.webp">
+<div class="stackly-movie-info">
+<h4>Movie Title</h4>
+<div class="stackly-rating">⭐ 8.4</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+</div>
+
+<button class="stackly-arrow right">&#10095;</button>
+
+</div>
+
+</section>
+
+<section class="stackly-movie-section">
+
+<div class="stackly-row-header">
+<h2>LOVE MOVIES</h2>
+<a href="404.html" class="stackly-view-all">View All</a>
+</div>
+
+<div class="stackly-slider-wrapper">
+
+<button class="stackly-arrow left">&#10094;</button>
+
+<div class="stackly-movie-slider">
+
+<!-- 1 -->
+<div class="stackly-movie-card">
+<img src="thum1.webp">
+<div class="stackly-movie-info">
+<h4>Titanic</h4>
+<div class="stackly-rating">⭐ 8.1</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="stackly-movie-card">
+<img src="thum10.webp">
+<div class="stackly-movie-info">
+<h4>The Notebook</h4>
+<div class="stackly-rating">⭐ 8.0</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="stackly-movie-card">
+<img src="thum12.webp">
+<div class="stackly-movie-info">
+<h4>La La Land</h4>
+<div class="stackly-rating">⭐ 8.2</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="stackly-movie-card">
+<img src="thum4.webp">
+<div class="stackly-movie-info">
+<h4>Before Sunrise</h4>
+<div class="stackly-rating">⭐ 8.3</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="stackly-movie-card">
+<img src="thum5.webp">
+<div class="stackly-movie-info">
+<h4>Dear John</h4>
+<div class="stackly-rating">⭐ 7.8</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="stackly-movie-card">
+<img src="thum6.webp">
+<div class="stackly-movie-info">
+<h4>Romeo & Juliet</h4>
+<div class="stackly-rating">⭐ 8.0</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="stackly-movie-card">
+<img src="thum18.webp">
+<div class="stackly-movie-info">
+<h4>Me Before You</h4>
+<div class="stackly-rating">⭐ 7.9</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="stackly-movie-card">
+<img src="thum8.webp">
+<div class="stackly-movie-info">
+<h4>Pride & Prejudice</h4>
+<div class="stackly-rating">⭐ 8.1</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="stackly-movie-card">
+<img src="thum9.webp">
+<div class="stackly-movie-info">
+<h4>The Vow</h4>
+<div class="stackly-rating">⭐ 7.7</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="stackly-movie-card">
+<img src="thum10.webp">
+<div class="stackly-movie-info">
+<h4>The Fault in Our Stars</h4>
+<div class="stackly-rating">⭐ 8.2</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+</div>
+
+<button class="stackly-arrow right">&#10095;</button>
+
+</div>
+
+</section>
+
+<section class="stackly-movie-section">
+
+<div class="stackly-row-header">
+<h2>LOVE MOVIES</h2>
+<a href="404.html" class="stackly-view-all">View All</a>
+</div>
+
+<div class="stackly-slider-wrapper">
+
+<button class="stackly-arrow left">&#10094;</button>
+
+<div class="stackly-movie-slider">
+
+<!-- 1 -->
+<div class="stackly-movie-card">
+<img src="di.webp">
+<div class="stackly-movie-info">
+<h4>Titanic</h4>
+<div class="stackly-rating">⭐ 8.1</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="stackly-movie-card">
+<img src="di1.webp">
+<div class="stackly-movie-info">
+<h4>The Notebook</h4>
+<div class="stackly-rating">⭐ 8.0</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="stackly-movie-card">
+<img src="di11.webp">
+<div class="stackly-movie-info">
+<h4>La La Land</h4>
+<div class="stackly-rating">⭐ 8.2</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="stackly-movie-card">
+<img src="di12.webp">
+<div class="stackly-movie-info">
+<h4>Before Sunrise</h4>
+<div class="stackly-rating">⭐ 8.3</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="stackly-movie-card">
+<img src="thum5.webp">
+<div class="stackly-movie-info">
+<h4>Dear John</h4>
+<div class="stackly-rating">⭐ 7.8</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="stackly-movie-card">
+<img src="thum6.webp">
+<div class="stackly-movie-info">
+<h4>Romeo & Juliet</h4>
+<div class="stackly-rating">⭐ 8.0</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="stackly-movie-card">
+<img src="thum7.webp">
+<div class="stackly-movie-info">
+<h4>Me Before You</h4>
+<div class="stackly-rating">⭐ 7.9</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="stackly-movie-card">
+<img src="thum8.webp">
+<div class="stackly-movie-info">
+<h4>Pride & Prejudice</h4>
+<div class="stackly-rating">⭐ 8.1</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="stackly-movie-card">
+<img src="di12.webp">
+<div class="stackly-movie-info">
+<h4>The Vow</h4>
+<div class="stackly-rating">⭐ 7.7</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="stackly-movie-card">
+<img src="di14.webp">
+<div class="stackly-movie-info">
+<h4>The Fault in Our Stars</h4>
+<div class="stackly-rating">⭐ 8.2</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+</div>
+
+<button class="stackly-arrow right">&#10095;</button>
+
+</div>
+
+</section>
+<section class="stackly-movie-section">
+
+<div class="stackly-row-header">
+<h2>ACTION MOVIES</h2>
+<a href="404.html" class="stackly-view-all">View All</a>
+</div>
+
+<div class="stackly-slider-wrapper">
+
+<button class="stackly-arrow left">&#10094;</button>
+
+<div class="stackly-movie-slider">
+
+<!-- 1 -->
+<div class="stackly-movie-card">
+<img src="pos1.webp">
+<div class="stackly-movie-info">
+<h4>John Wick</h4>
+<div class="stackly-rating">⭐ 8.4</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="stackly-movie-card">
+<img src="pos2.webp">
+<div class="stackly-movie-info">
+<h4>Mad Max</h4>
+<div class="stackly-rating">⭐ 8.1</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="stackly-movie-card">
+<img src="pos3.webp">
+<div class="stackly-movie-info">
+<h4>Mission Impossible</h4>
+<div class="stackly-rating">⭐ 8.0</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="stackly-movie-card">
+<img src="thum7.webp">
+<div class="stackly-movie-info">
+<h4>The Dark Knight</h4>
+<div class="stackly-rating">⭐ 9.0</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="stackly-movie-card">
+<img src="thum5.webp">
+<div class="stackly-movie-info">
+<h4>Gladiator</h4>
+<div class="stackly-rating">⭐ 8.5</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="stackly-movie-card">
+<img src="thum10.webp">
+<div class="stackly-movie-info">
+<h4>Black Panther</h4>
+<div class="stackly-rating">⭐ 8.0</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="stackly-movie-card">
+<img src="thum15.webp">
+<div class="stackly-movie-info">
+<h4>The Avengers</h4>
+<div class="stackly-rating">⭐ 8.3</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="stackly-movie-card">
+<img src="pos8.webp">
+<div class="stackly-movie-info">
+<h4>Extraction</h4>
+<div class="stackly-rating">⭐ 7.6</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="stackly-movie-card">
+<img src="pos1.webp">
+<div class="stackly-movie-info">
+<h4>Die Hard</h4>
+<div class="stackly-rating">⭐ 8.2</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="stackly-movie-card">
+<img src="pos2.webp">
+<div class="stackly-movie-info">
+<h4>Fast & Furious</h4>
+<div class="stackly-rating">⭐ 7.8</div>
+<div class="stackly-buttons">
+<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
+<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+</div>
+
+</div>
+
+<button class="stackly-arrow right">&#10095;</button>
+
+</div>
+
+</section>
+
+
+<footer class="stackly-footer">
+
+<div class="stackly-footer-container">
+
+<!-- LOGO + COMPANY -->
+<div class="stackly-footer-col">
+
+<div class="stackly-logo">
+<img src="logo.webp" alt="Stackly Logo">
+</div>
+
+<h4>Company</h4>
+
+<ul>
+<li><a href="contact.html">contact</a></li>
+<li><a href="login.html">login</a></li>
+</ul>
+
+<p class="stackly-copy">
+© 2026 STAR. All Rights Reserved.
+</p>
+
+<div class="stackly-links">
+<a href="404.html">Terms Of Use</a>
+<a href="404.html">Privacy Policy</a>
+<a href="404.html">FAQ</a>
+</div>
+
+</div>
+
+
+<!-- LANGUAGE -->
+<div class="stackly-footer-col">
+
+<h4>View Website in</h4>
+
+<ul>
+<li class="stackly-lang">
+<i class="fa-solid fa-check"></i> English
+</li>
+</ul>
+
+</div>
+
+
+<!-- HELP -->
+<div class="stackly-footer-col">
+
+<h4>Need Help?</h4>
+
+<ul>
+<li><a href="404.html">Visit Help Center</a></li>
+<li><a href="404.html">Share Feedback</a></li>
+</ul>
+
+</div>
+
+
+<!-- SOCIAL -->
+<div class="stackly-footer-col">
+
+<h4>Connect with Us</h4>
+
+<div class="stackly-social">
+
+<a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+
+</div>
+
+<div class="stackly-apps">
+
+<img src="play.webp">
+<img src="app.webp">
+
+</div>
+
+</div>
+
+</div>
+<script>
+
+const sections = document.querySelectorAll(".stackly-movie-section");
+
+window.addEventListener("scroll", () => {
+
+sections.forEach(section => {
+
+const sectionTop = section.getBoundingClientRect().top;
+const trigger = window.innerHeight * 0.85;
+
+if(sectionTop < trigger){
+section.classList.add("show");
+}else{
+section.classList.remove("show");
+}
+
+});
+
+});
+
+</script>
+</footer>
+<style>
+    .stackly-footer{
+background:#070b14;
+padding:70px 8%;
+color:#9ca3af;
+font-family:Poppins;
+}
+
+.stackly-footer-container{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:60px;
+}
+
+/* logo */
+
+.stackly-logo img{
+width:140px;
+margin-bottom:20px;
+}
+
+/* titles */
+
+.stackly-footer-col h4{
+color:white;
+margin-bottom:20px;
+font-size:18px;
+}
+
+/* list */
+
+.stackly-footer-col ul{
+list-style:none;
+padding:0;
+}
+
+.stackly-footer-col ul li{
+margin-bottom:12px;
+}
+
+.stackly-footer-col a{
+text-decoration:none;
+color:#9ca3af;
+transition:0.3s;
+}
+
+.stackly-footer-col a:hover{
+color:white;
+}
+
+/* copyright */
+
+.stackly-copy{
+margin-top:25px;
+font-size:14px;
+}
+
+.stackly-links{
+margin-top:10px;
+}
+
+.stackly-links a{
+margin-right:15px;
+font-size:14px;
+}
+
+/* language */
+
+.stackly-lang{
+color:#9ca3af;
+}
+
+.stackly-lang i{
+color:#4ade80;
+margin-right:6px;
+}
+
+/* social */
+
+.stackly-social{
+display:flex;
+gap:20px;
+font-size:22px;
+margin-bottom:25px;
+}
+
+.stackly-social a{
+color:white;
+}
+
+/* app buttons */
+
+.stackly-apps img{
+width:140px;
+margin-right:10px;
+margin-top:10px;
+}
+
+/* responsive */
+
+@media(max-width:900px){
+
+.stackly-footer-container{
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+}
+
+@media(max-width:600px){
+
+.stackly-footer-container{
+grid-template-columns:1fr;
+}
+
+}
+</style>
