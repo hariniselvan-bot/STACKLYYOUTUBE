@@ -11,36 +11,6 @@
 
 <style>
 
-:root{
-    --bg:#0d0d0d;
-    --text:#e4e4e4;
-    --muted:#d1d5db;
-    --header-bg: rgba(0,0,0,0.65);
-    --accent1:#7c3aed;
-    --accent2:#ff3e7f;
-    --card-bg: rgba(255,255,255,0.05);
-    --overlay: rgba(0,0,0,0.65);
-    --footer-bg:#070b14;
-    --logo-filter: drop-shadow(0 0 3px #7c3aed) drop-shadow(0 0 6px #ff3e7f);
-    --logo-filter-hover: drop-shadow(0 0 6px var(--accent1)) drop-shadow(0 0 12px var(--accent2));
-    --btn-bg: rgba(0,0,0,0.6);
-    --btn-accent: #c52294;
-}
-
-[data-theme="light"]{
-    --bg:#f8fafc;
-    --text:#0b1220;
-    --muted:#6b7280;
-    --header-bg: rgba(255,255,255,0.85);
-    --card-bg: rgba(0,0,0,0.04);
-    --overlay: rgba(255,255,255,0.65);
-    --footer-bg:#f1f5f9;
-    --logo-filter: drop-shadow(0 0 3px var(--accent1)) drop-shadow(0 0 6px var(--accent2));
-    --logo-filter-hover: drop-shadow(0 0 6px var(--accent1)) drop-shadow(0 0 12px var(--accent2));
-    --btn-bg: rgba(255,255,255,0.9);
-    --btn-accent: var(--accent2);
-}
-
 *{
 margin:0;
 padding:0;
@@ -49,8 +19,7 @@ font-family:'Outfit',sans-serif;
 }
 
 body{
-background:var(--bg);
-color:var(--text);
+background:#0d0d0d;
 }
 
 /* HEADER */
@@ -76,7 +45,7 @@ align-items:center;
 gap:12px;
 font-size:34px;
 font-weight:600;
-color:var(--text);
+color:white;
 }
 
 .logo-icon{
@@ -87,7 +56,7 @@ background:linear-gradient(45deg,#7c3aed,#ff3e7f);
 display:flex;
 align-items:center;
 justify-content:center;
-color:var(--text);
+color:white;
 }
 
 /* NAV */
@@ -108,7 +77,7 @@ display:flex;
 align-items:center;
 gap:8px;
 text-decoration:none;
-color:var(--text);
+color:#e4e4e4;
 font-size:16px;
 font-weight:500;
 cursor:pointer;
@@ -120,16 +89,14 @@ cursor:pointer;
 position:absolute;
 top:100%;
 left:0;
-background: var(--bg);
+background:#111;
 padding:18px;
-border-radius:12px;
+border-radius:10px;
 display:none;
 flex-direction:column;
 gap:12px;
-min-width:170px;
-box-shadow:0 15px 50px rgba(0,0,0,0.5);
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:none;
+min-width:160px;
+box-shadow:0 10px 40px rgba(0,0,0,0.7);
 }
 
 /* DESKTOP HOVER */
@@ -157,16 +124,16 @@ gap:30px;
 }
 
 .search{
-color:var(--text);
+color:white;
 font-size:18px;
 cursor:pointer;
 }
 
 .contact{
-background:linear-gradient(90deg,var(--accent1),var(--accent2));
+background:linear-gradient(90deg,#7c3aed,#ff3e7f);
 padding:12px 26px;
 border-radius:35px;
-color:var(--text);
+color:white;
 font-size:15px;
 font-weight:600;
 display:flex;
@@ -178,7 +145,7 @@ text-decoration:none;
 .hamburger{
 display:none;
 font-size:24px;
-color:var(--text);
+color:white;
 cursor:pointer;
 }
 
@@ -190,7 +157,7 @@ top:0;
 left:-100%;
 width:100%;
 height:100vh;
-background:linear-gradient(160deg,var(--bg),#1a0033,#2a001d);
+background:linear-gradient(160deg,#0b0b0b,#1a0033,#2a001d);
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -213,7 +180,7 @@ margin:20px 0;
 }
 
 .mobile-menu a{
-color:var(--text);
+color:white;
 font-size:26px;
 text-decoration:none;
 display:flex;
@@ -230,7 +197,7 @@ margin-top:10px;
 .mobile-dropdown a{
 display:block;
 font-size:18px;
-color:var(--muted);
+color:#ddd;
 margin:8px 0;
 }
 
@@ -243,7 +210,7 @@ position:absolute;
 top:30px;
 right:35px;
 font-size:30px;
-color:var(--text);
+color:white;
 cursor:pointer;
 }
 
@@ -271,50 +238,27 @@ font-size:26px;
 
 }
 .logo img{
-height: 60px;
+height: 60px;;
 width:auto;
 object-fit:contain;
 
-/* double shade effect uses theme variable */
-filter: var(--logo-filter);
+/* double shade effect */
+filter:
+drop-shadow(0 0 3px #7c3aed)
+drop-shadow(0 0 6px #ff3e7f);
 
 transition:0.3s;
 }
 
 /* hover glow */
 .logo img:hover{
-filter: var(--logo-filter-hover);
+filter:
+drop-shadow(0 0 6px #7c3aed)
+drop-shadow(0 0 12px #ff3e7f);
 }
 </style>
 </head>
 <body>
-
-<style>
-/* Theme-aware overrides */
-header{background:var(--header-bg);}
-.logo{color:var(--text);}
-nav ul li a{color:var(--text);}
-.dropdown{background:var(--card-bg);}
-.mobile-menu{background:linear-gradient(160deg,var(--bg),#1a0033);}
-.stackly-cta-content h1, .stackly-cta-content p{color:var(--text);}
-.stackly-cta-content p{color:var(--muted);}
-.stackly-watch-btn, .stackly-buy-btn{color:var(--text);}
-.dashboard{background:var(--bg); color:var(--text);}
-.dash-card{background:var(--card-bg);}
-.dash-graph{background:var(--bg);}
-.graph-box{background:var(--card-bg);}
-.stackly-footer{background:var(--footer-bg); color:var(--muted);}
-.stackly-footer-col h4{color:var(--text);}
-.stackly-footer-col a{color:var(--muted);}
-#theme-toggle{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--text);padding:8px 12px;border-radius:20px;cursor:pointer;font-size:16px}
-#theme-toggle i{pointer-events:none}
-@media (max-width:900px){ #theme-toggle{display:inline-flex;align-items:center;justify-content:center} }
-</style>
-
-<style>
-/* Force all text to use theme text color so single words adapt */
-body, body *{ color:var(--text) !important; }
-</style>
 
 <header>
 
@@ -366,10 +310,6 @@ body, body *{ color:var(--text) !important; }
 <i class="fa-solid fa-crown"></i>
 LOGIN NOW
 </a>
-
-<button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
-    <i class="fa-solid fa-moon"></i>
-</button>
 
 <div class="hamburger" onclick="openMenu()">
 <i class="fa-solid fa-bars"></i>
@@ -438,51 +378,6 @@ function toggleMobileDropdown(){
 document.getElementById("mobileDrop").classList.toggle("active");
 }
 
-
-/* Theme toggle: persist and update UI */
-(function(){
-    const stored = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = stored || (prefersDark ? 'dark' : 'dark');
-    document.documentElement.setAttribute('data-theme', theme);
-    const btn = document.getElementById('theme-toggle');
-    if(btn){ btn.addEventListener('click', toggleTheme); }
-    updateToggleIcon();
-})();
-
-function toggleTheme(){
-    const current = document.documentElement.getAttribute('data-theme') || 'dark';
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-    updateToggleIcon();
-    updateChartsColors();
-}
-
-function updateToggleIcon(){
-    const btn = document.getElementById('theme-toggle');
-    if(!btn) return;
-    const icon = btn.querySelector('i');
-    if(document.documentElement.getAttribute('data-theme') === 'dark'){
-        icon.className = 'fa-solid fa-moon';
-    } else {
-        icon.className = 'fa-solid fa-sun';
-    }
-}
-
-function updateChartsColors(){
-    const cColor = getComputedStyle(document.documentElement).getPropertyValue('--text').trim() || 'white';
-    if(window.movieChartInstance){
-        if(window.movieChartInstance.options.plugins && window.movieChartInstance.options.plugins.legend){
-            window.movieChartInstance.options.plugins.legend.labels.color = cColor;
-        }
-        if(window.movieChartInstance.options.scales){
-            if(window.movieChartInstance.options.scales.x) window.movieChartInstance.options.scales.x.ticks.color = cColor;
-            if(window.movieChartInstance.options.scales.y) window.movieChartInstance.options.scales.y.ticks.color = cColor;
-        }
-        window.movieChartInstance.update();
-    }
-}
 </script>
 
 <section class="stackly-movie-cta">
@@ -520,15 +415,15 @@ Track movie views, user activity, and platform growth with powerful analytics to
 background-image:url("h1.webp");
 }
     .stackly-movie-cta{
-    position:relative;
-    height:500px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:var(--text);
-    font-family:Poppins;
-    overflow:hidden;
+position:relative;
+height:500px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+font-family:Poppins;
+overflow:hidden;
 
 /* you will add your image here */
 background-size:cover;
@@ -540,7 +435,7 @@ background-position:center;
 .stackly-cta-overlay{
 position:absolute;
 inset:0;
-background:var(--overlay);
+background:rgba(0,0,0,0.65);
 }
 
 /* content */
@@ -560,7 +455,7 @@ margin-bottom:20px;
 
 .stackly-cta-content p{
 font-size:18px;
-color:var(--muted);
+color:#d1d5db;
 margin-bottom:30px;
 }
 
@@ -573,31 +468,31 @@ gap:20px;
 }
 
 .stackly-watch-btn{
-background:var(--btn-bg);
+background:#000;
 padding:14px 30px;
 border-radius:8px;
 text-decoration:none;
-color:var(--text);
+color:white;
 font-size:16px;
 transition:0.3s;
 }
 
 .stackly-buy-btn{
-background:var(--btn-accent);
+background:#c52294;
 padding:14px 30px;
 border-radius:8px;
 text-decoration:none;
-color:var(--text);
+color:white;
 font-size:16px;
 transition:0.3s;
 }
 
 .stackly-watch-btn:hover{
-background:rgba(255,255,255,0.06);
+background:#111;
 }
 
 .stackly-buy-btn:hover{
-background:rgba(0,0,0,0.12);
+background:#5d1935;
 }
 </style>
 <section class="dashboard">
@@ -635,10 +530,10 @@ background:rgba(0,0,0,0.12);
 </section>
 <style>
     .dashboard{
-background:var(--bg);
+background:#080808;
 padding:100px 60px;
 text-align:center;
-color:var(--text);
+color:white;
 }
 
 .dash-title{
@@ -753,9 +648,9 @@ update();
 </section>
 <style>
     .dash-graph{
-background:var(--bg);
+background:#0b0b0b;
 padding:80px 60px;
-color:var(--text);
+color:white;
 text-align:center;
 }
 @media(max-width:768px){
@@ -836,7 +731,7 @@ height:300px;
 width:900px;
 max-width:100%;
 margin:auto;
-background:var(--card-bg);
+background:#111;
 padding:30px;
 border-radius:20px;
 }
@@ -849,9 +744,7 @@ height:400px;
 
 const ctx = document.getElementById("movieChart");
 
-const chartTextColor = getComputedStyle(document.documentElement).getPropertyValue('--text').trim() || 'white';
-
-window.movieChartInstance = new Chart(ctx, {
+new Chart(ctx, {
 type: "line",
 
 data: {
@@ -871,11 +764,11 @@ fill: true
 options: {
 responsive: true,
 plugins:{
-legend:{labels:{color: chartTextColor}}
+legend:{labels:{color:"white"}}
 },
 scales:{
-x:{ticks:{color: chartTextColor}},
-y:{ticks:{color: chartTextColor}}
+x:{ticks:{color:"white"}},
+y:{ticks:{color:"white"}}
 }
 }
 
@@ -968,9 +861,9 @@ y:{ticks:{color: chartTextColor}}
 </footer>
 <style>
     .stackly-footer{
-background:var(--footer-bg);
+background:#070b14;
 padding:70px 8%;
-color:var(--muted);
+color:#9ca3af;
 font-family:Poppins;
 }
 
@@ -990,7 +883,7 @@ margin-bottom:20px;
 /* titles */
 
 .stackly-footer-col h4{
-color:var(--text);
+color:white;
 margin-bottom:20px;
 font-size:18px;
 }
@@ -1008,12 +901,12 @@ margin-bottom:12px;
 
 .stackly-footer-col a{
 text-decoration:none;
-color:var(--muted);
+color:#9ca3af;
 transition:0.3s;
 }
 
 .stackly-footer-col a:hover{
-color:var(--text);
+color:white;
 }
 
 /* copyright */
@@ -1035,7 +928,7 @@ font-size:14px;
 /* language */
 
 .stackly-lang{
-color:var(--muted);
+color:#9ca3af;
 }
 
 .stackly-lang i{
@@ -1053,7 +946,7 @@ margin-bottom:25px;
 }
 
 .stackly-social a{
-color:var(--text);
+color:white;
 }
 
 /* app buttons */
@@ -1083,4 +976,3 @@ grid-template-columns:1fr;
 
 }
 </style>
-</head>

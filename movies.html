@@ -10,31 +10,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-:root{
-    --bg:#0d0d0d;
-    --text:#ffffff;
-    --muted:#e4e4e4;
-    --header-bg:rgba(0,0,0,0.65);
-    --card-bg:#111;
-    --accent1:#7c3aed;
-    --accent2:#ff3e7f;
-    --overlay:rgba(0,0,0,0.65);
-    --bg-image-overlay:rgba(0,0,0,0.65);
-}
-
-[data-theme="light"]{
-    --bg:#ffffff;
-    --text:#0b1220;
-    --muted:#6b7280;
-    --header-bg:rgba(255,255,255,0.7);
-    --card-bg:#f3f4f6;
-    --accent1:#6d28d9;
-    --accent2:#d9467a;
-    --overlay:rgba(0,0,0,0.2);
-    --bg-image-overlay:rgba(255,255,255,0.85);
-}
-
-html,body{transition:background-color .25s ease,color .25s ease}
 
 *{
 margin:0;
@@ -44,8 +19,7 @@ font-family:'Outfit',sans-serif;
 }
 
 body{
-background:var(--bg);
-color:var(--text);
+background:#0d0d0d;
 }
 
 /* HEADER */
@@ -56,7 +30,7 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 padding:20px 80px;
-background:var(--header-bg);
+background:rgba(0,0,0,0.65);
 backdrop-filter:blur(12px);
 position:sticky;
 top:0;
@@ -71,14 +45,14 @@ align-items:center;
 gap:12px;
 font-size:34px;
 font-weight:600;
-color:var(--text);
+color:white;
 }
 
 .logo-icon{
 width:36px;
 height:36px;
 border-radius:10px;
-background:linear-gradient(45deg,var(--accent1),var(--accent2));
+background:linear-gradient(45deg,#7c3aed,#ff3e7f);
 display:flex;
 align-items:center;
 justify-content:center;
@@ -103,7 +77,7 @@ display:flex;
 align-items:center;
 gap:8px;
 text-decoration:none;
-color:var(--muted);
+color:#e4e4e4;
 font-size:16px;
 font-weight:500;
 cursor:pointer;
@@ -115,16 +89,14 @@ cursor:pointer;
 position:absolute;
 top:100%;
 left:0;
-background: var(--bg);
+background:#111;
 padding:18px;
-border-radius:12px;
+border-radius:10px;
 display:none;
 flex-direction:column;
 gap:12px;
-min-width:170px;
-box-shadow:0 15px 50px rgba(0,0,0,0.5);
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:none;
+min-width:160px;
+box-shadow:0 10px 40px rgba(0,0,0,0.7);
 }
 
 /* DESKTOP HOVER */
@@ -152,13 +124,13 @@ gap:30px;
 }
 
 .search{
-color:var(--text);
+color:white;
 font-size:18px;
 cursor:pointer;
 }
 
 .contact{
-background:linear-gradient(90deg,var(--accent1),var(--accent2));
+background:linear-gradient(90deg,#7c3aed,#ff3e7f);
 padding:12px 26px;
 border-radius:35px;
 color:white;
@@ -173,7 +145,7 @@ text-decoration:none;
 .hamburger{
 display:none;
 font-size:24px;
-color:var(--text);
+color:white;
 cursor:pointer;
 }
 
@@ -185,20 +157,13 @@ top:0;
 left:-100%;
 width:100%;
 height:100vh;
-background:linear-gradient(160deg,var(--bg),#1a0033,#2a001d);
+background:linear-gradient(160deg,#0b0b0b,#1a0033,#2a001d);
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
 transition:.4s;
 z-index:2000;
-}.mobile-menu a{
-color:var(--text);
-font-weight:600;
-}
-
-.mobile-menu i{
-color:var(--accent2);
 }
 
 .mobile-menu.active{
@@ -217,11 +182,10 @@ margin:20px 0;
 .mobile-menu a{
 color:white;
 font-size:26px;
-font-weight:600;
 text-decoration:none;
 display:flex;
 align-items:center;
-gap:12px;
+gap:10px;
 justify-content:center;
 }
 
@@ -233,7 +197,7 @@ margin-top:10px;
 .mobile-dropdown a{
 display:block;
 font-size:18px;
-color:var(--muted);
+color:#ddd;
 margin:8px 0;
 }
 
@@ -246,7 +210,7 @@ position:absolute;
 top:30px;
 right:35px;
 font-size:30px;
-color:var(--accent2);
+color:white;
 cursor:pointer;
 }
 
@@ -280,8 +244,8 @@ object-fit:contain;
 
 /* double shade effect */
 filter:
-drop-shadow(0 0 3px var(--accent1))
-drop-shadow(0 0 6px var(--accent2));
+drop-shadow(0 0 3px #7c3aed)
+drop-shadow(0 0 6px #ff3e7f);
 
 transition:0.3s;
 }
@@ -289,8 +253,8 @@ transition:0.3s;
 /* hover glow */
 .logo img:hover{
 filter:
-drop-shadow(0 0 6px var(--accent1))
-drop-shadow(0 0 12px var(--accent2));
+drop-shadow(0 0 6px #7c3aed)
+drop-shadow(0 0 12px #ff3e7f);
 }
 </style>
 </head>
@@ -445,66 +409,7 @@ Watch instantly or buy your favorite films in HD quality.
 
 </div>
 
-
 </section>
-
-<script>
-// Theme toggle: inject button and persist theme (footer unchanged)
-(function(){
-    const root = document.documentElement;
-    const stored = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initial = stored || (prefersDark ? 'dark' : 'light');
-    root.setAttribute('data-theme', initial);
-
-    function updateIcon(btn){
-        if(!btn) return;
-        const icon = btn.querySelector('i');
-        if(root.getAttribute('data-theme') === 'dark') icon.className = 'fa-solid fa-moon';
-        else icon.className = 'fa-solid fa-sun';
-    }
-
-    function toggleTheme(){
-        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        updateIcon(document.getElementById('theme-toggle'));
-    }
-
-    const btn = document.createElement('button');
-    btn.id = 'theme-toggle';
-    btn.className = 'theme-toggle';
-    btn.setAttribute('aria-label','Toggle theme');
-    btn.style.background = 'transparent';
-    btn.style.border = 'none';
-    btn.style.color = 'var(--text)';
-    btn.style.fontSize = '18px';
-    btn.style.cursor = 'pointer';
-    btn.style.display = 'inline-flex';
-    btn.style.alignItems = 'center';
-    btn.style.gap = '8px';
-    const i = document.createElement('i');
-    i.className = initial === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
-    btn.appendChild(i);
-
-    const right = document.querySelector('.right');
-    if(right){
-        const hamburger = right.querySelector('.hamburger');
-        right.insertBefore(btn, hamburger || null);
-        btn.addEventListener('click', toggleTheme);
-    }
-
-    if(window.matchMedia){
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-            if(!localStorage.getItem('theme')){
-                const sys = e.matches ? 'dark' : 'light';
-                root.setAttribute('data-theme', sys);
-                updateIcon(document.getElementById('theme-toggle'));
-            }
-        });
-    }
-})();
-</script>
 <style>
     .stackly-movie-cta{
 background-image:url("pos2.webp");
@@ -516,7 +421,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-color:var(--text);
+color:white;
 font-family:Poppins;
 overflow:hidden;
 
@@ -525,12 +430,12 @@ background-size:cover;
 background-position:center;
 }
 
-/* dark / light overlay */
+/* dark overlay */
 
 .stackly-cta-overlay{
 position:absolute;
 inset:0;
-background:var(--bg-image-overlay);
+background:rgba(0,0,0,0.65);
 }
 
 /* content */
@@ -550,7 +455,7 @@ margin-bottom:20px;
 
 .stackly-cta-content p{
 font-size:18px;
-color:var(--muted);
+color:#d1d5db;
 margin-bottom:30px;
 }
 
@@ -563,17 +468,17 @@ gap:20px;
 }
 
 .stackly-watch-btn{
-background:var(--card-bg);
+background:#000;
 padding:14px 30px;
 border-radius:8px;
 text-decoration:none;
-color:var(--text);
+color:white;
 font-size:16px;
 transition:0.3s;
 }
 
 .stackly-buy-btn{
-background:linear-gradient(90deg,var(--accent1),var(--accent2));
+background:#c52294;
 padding:14px 30px;
 border-radius:8px;
 text-decoration:none;
@@ -583,11 +488,11 @@ transition:0.3s;
 }
 
 .stackly-watch-btn:hover{
-background:rgba(255,255,255,0.04);
+background:#111;
 }
 
 .stackly-buy-btn:hover{
-filter:brightness(.95);
+background:#5d1935;
 }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -596,326 +501,263 @@ filter:brightness(.95);
 
 <div class="stackly-row-header">
 <h2>Kids Movies</h2>
-<a href="404.html">View All ></a>
 </div>
-
-<div class="stackly-slider-wrapper">
-
-<button class="stackly-arrow left">&#10094;</button>
 
 <div class="stackly-movie-slider">
 
-<!-- CARD 1 -->
 <div class="stackly-movie-card">
 <img src="di.webp">
 <div class="stackly-movie-info">
-<h4>KUNG</h4>
-<div class="stackly-rating">⭐ 8.5</div>
-
-<div class="stackly-buttons">
-<a href="404.html" class="stackly-play-btn">
-<i class="fa-solid fa-play"></i>
-</a>
-
-<a href="404.html" class="stackly-add-btn">
-<i class="fa-solid fa-plus"></i>
-</a>
-</div>
-
+<h4>KUNG FU PANDA</h4>
+<span>⭐ 8.5</span>
 </div>
 </div>
 
-<!-- CARD 2 -->
 <div class="stackly-movie-card">
 <img src="di1.webp">
 <div class="stackly-movie-info">
 <h4>FROZEN</h4>
-<div class="stackly-rating">⭐ 8.2</div>
-
-<div class="stackly-buttons">
-<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
-<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
-</div>
-
+<span>⭐ 8.2</span>
 </div>
 </div>
 
-<!-- CARD 3 -->
 <div class="stackly-movie-card">
 <img src="di3.webp">
 <div class="stackly-movie-info">
 <h4>TOY STORY</h4>
-<div class="stackly-rating">⭐ 8.6</div>
-
-<div class="stackly-buttons">
-<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
-<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
-</div>
-
+<span>⭐ 8.6</span>
 </div>
 </div>
 
-<!-- CARD 4 -->
 <div class="stackly-movie-card">
 <img src="di4.webp">
 <div class="stackly-movie-info">
-<h4>SPACE</h4>
-<div class="stackly-rating">⭐ 7.9</div>
-
-<div class="stackly-buttons">
-<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
-<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
-</div>
-
+<h4>SPACE HERO</h4>
+<span>⭐ 7.9</span>
 </div>
 </div>
 
-<!-- CARD 5 -->
 <div class="stackly-movie-card">
 <img src="di5.webp">
 <div class="stackly-movie-info">
 <h4>DRAGON HERO</h4>
-<div class="stackly-rating">⭐ 8.0</div>
-
-<div class="stackly-buttons">
-<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
-<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
-</div>
-
+<span>⭐ 8.0</span>
 </div>
 </div>
 
-<!-- CARD 6 -->
 <div class="stackly-movie-card">
 <img src="di6.webp">
 <div class="stackly-movie-info">
 <h4>JUNGLE QUEST</h4>
-<div class="stackly-rating">⭐ 7.8</div>
-
-<div class="stackly-buttons">
-<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
-<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
-</div>
-
+<span>⭐ 7.8</span>
 </div>
 </div>
 
-<!-- CARD 7 -->
 <div class="stackly-movie-card">
 <img src="di7.webp">
 <div class="stackly-movie-info">
 <h4>MAGIC WORLD</h4>
-<div class="stackly-rating">⭐ 8.3</div>
-
-<div class="stackly-buttons">
-<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
-<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
-</div>
-
+<span>⭐ 8.3</span>
 </div>
 </div>
 
-<!-- CARD 8 -->
 <div class="stackly-movie-card">
 <img src="di8.webp">
 <div class="stackly-movie-info">
 <h4>HERO KIDS</h4>
-<div class="stackly-rating">⭐ 7.7</div>
-
-<div class="stackly-buttons">
-<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
-<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
-</div>
-
-</div>
-</div>
-
-<!-- CARD 9 -->
-<div class="stackly-movie-card">
-<img src="di11.webp">
-<div class="stackly-movie-info">
-<h4>FANTASY LAND</h4>
-<div class="stackly-rating">⭐ 8.1</div>
-
-<div class="stackly-buttons">
-<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
-<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
-</div>
-
-</div>
-</div>
-
-<!-- CARD 10 -->
-<div class="stackly-movie-card">
-<img src="di11.webp">
-<div class="stackly-movie-info">
-<h4>STAR ADVENTURE</h4>
-<div class="stackly-rating">⭐ 8.4</div>
-
-<div class="stackly-buttons">
-<a href="404.html" class="stackly-play-btn"><i class="fa-solid fa-play"></i></a>
-<a href="404.html" class="stackly-add-btn"><i class="fa-solid fa-plus"></i></a>
-</div>
-
+<span>⭐ 7.7</span>
 </div>
 </div>
 
 </div>
 
-<button class="stackly-arrow right">&#10095;</button>
-
-</div>
 </section>
 
 <style>
-    .stackly-movie-section{
-padding:50px 6%;
-background:var(--bg);
-color:var(--text);
+
+/* section */
+
+.stackly-movie-section{
+padding:90px 7%;
+background:URL("bg.jpg") center/cover no-repeat;
 font-family:Poppins;
+color:white;
+}
+/* section animation */
+
+.stackly-movie-section{
+opacity:0;
+transform:translateX(150px);
+transition:all 0.9s ease;
 }
 
-.stackly-row-header{
-display:flex;
-justify-content:space-between;
-margin-bottom:20px;
+/* when visible */
+
+.stackly-movie-section.show{
+opacity:1;
+transform:translateX(0);
+}
+/* header */
+
+.stackly-row-header h2{
+font-size:38px;
+margin-bottom:35px;
+letter-spacing:1px;
 }
 
-.stackly-slider-wrapper{
-position:relative;
-}
+/* slider */
 
 .stackly-movie-slider{
 display:flex;
-gap:18px;
+gap:28px;
 overflow-x:auto;
+padding-bottom:14px;
 scroll-behavior:smooth;
 }
 
+/* underline scrollbar */
+
 .stackly-movie-slider::-webkit-scrollbar{
-display:none;
+height:6px;
 }
+
+.stackly-movie-slider::-webkit-scrollbar-track{
+background:#111;
+border-radius:10px;
+}
+
+.stackly-movie-slider::-webkit-scrollbar-thumb{
+background:#ff004c;
+border-radius:10px;
+}
+
+/* movie card */
 
 .stackly-movie-card{
 position:relative;
-min-width:190px;
-height:280px;
-border-radius:10px;
+min-width:260px;
+height:380px;
+border-radius:18px;
 overflow:hidden;
-background:var(--card-bg);
-transition:.4s;
 cursor:pointer;
+transition:.4s;
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
 }
 
 .stackly-movie-card img{
 width:100%;
 height:100%;
 object-fit:cover;
-transition:.4s;
+transition:.6s;
 }
 
-/* expand */
+/* hover */
 
 .stackly-movie-card:hover{
-transform:scale(1.2);
-height:340px;
-z-index:5;
+transform:scale(1.1);
 }
 
 .stackly-movie-card:hover img{
-height:200px;
+transform:scale(1.15);
 }
 
-/* info */
+/* overlay */
 
 .stackly-movie-info{
 position:absolute;
 bottom:0;
 left:0;
 width:100%;
-background:var(--card-bg);
-padding:12px;
-opacity:0;
+padding:20px;
+background:linear-gradient(to top,rgba(0,0,0,0.95),transparent);
+}
+
+.stackly-movie-info h4{
+font-size:18px;
+margin-bottom:6px;
+}
+
+.stackly-movie-info span{
+font-size:14px;
+color:#22c55e;
+}
+
+/* mobile */
+
+@media(max-width:768px){
+
+.stackly-movie-section{
+padding:60px 20px;
+}
+
+.stackly-row-header h2{
+font-size:24px;
+}
+
+.stackly-movie-slider{
+flex-direction:column;
+gap:25px;
+overflow:visible;
+}
+
+.stackly-movie-card{
+min-width:100%;
+height:300px;
+}
+/* header layout */
+
+.stackly-row-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+/* title */
+
+.stackly-row-header h2{
+font-size:30px;
+font-weight:600;
+}
+
+/* view all button */
+
+.stackly-view-all{
+text-decoration:none;
+font-size:14px;
+color:#aaa;
+position:relative;
 transition:.3s;
 }
 
-.stackly-movie-card:hover .stackly-movie-info{
-opacity:1;
-}
+/* underline animation */
 
-.stackly-rating{
-color:#22c55e;
-font-size:13px;
-margin-bottom:8px;
-}
-
-.stackly-buttons{
-display:flex;
-gap:10px;
-}
-
-.stackly-play-btn,
-.stackly-add-btn{
-width:32px;
-height:32px;
-border-radius:50%;
-background:rgba(0,0,0,0.2);
-display:flex;
-align-items:center;
-justify-content:center;
-color:var(--text);
-text-decoration:none;
-}
-
-.stackly-play-btn:hover{
-background:linear-gradient(90deg,var(--accent1),var(--accent2));
-}
-
-.stackly-add-btn:hover{
-background:rgba(255,255,255,0.06);
-}
-
-/* arrows */
-
-.stackly-arrow{
+.stackly-view-all::after{
+content:"";
 position:absolute;
-top:40%;
-transform:translateY(-50%);
-background:rgba(0,0,0,0.45);
-border:none;
-color:var(--text);
-font-size:30px;
-width:45px;
-height:70px;
-cursor:pointer;
+left:0;
+bottom:-4px;
+width:0%;
+height:2px;
+background:#ff004c;
+transition:.3s;
 }
 
-.stackly-arrow.left{left:-10px;}
-.stackly-arrow.right{right:-10px;}
+.stackly-view-all:hover{
+color:white;
+}
+
+.stackly-view-all:hover::after{
+width:100%;
+}
+}
+
 </style>
-<script>
-
-document.querySelectorAll(".stackly-slider-wrapper").forEach(wrapper=>{
-
-const slider=wrapper.querySelector(".stackly-movie-slider");
-const left=wrapper.querySelector(".left");
-const right=wrapper.querySelector(".right");
-
-left.onclick=()=>slider.scrollLeft-=400;
-right.onclick=()=>slider.scrollLeft+=400;
-
-setInterval(()=>{
-slider.scrollLeft+=200;
-},4000);
-
-});
-
-</script>
 <section class="stackly-movie-section">
 
 <div class="stackly-row-header">
 <h2>Adventure Movies</h2>
-<a href="404.html">View All ></a>
+<a href="404.html" class="stackly-view-all">View All</a>
 </div>
 
 <div class="stackly-slider-wrapper">
@@ -1049,15 +891,71 @@ slider.scrollLeft+=200;
 <button class="stackly-arrow right">&#10095;</button>
 
 </div>
+<style>
+    .stackly-row-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+flex-wrap:nowrap;
+}
 
+.stackly-row-header h2{
+font-size:30px;
+white-space:nowrap;
+}
+
+.stackly-view-all{
+text-decoration:none;
+font-size:14px;
+color:#aaa;
+transition:.3s;
+}
+
+.stackly-view-all:hover{
+color:#fff;
+}
+.stackly-arrow{
+display:none;
+}
+@media (max-width:768px){
+
+.stackly-row-header{
+padding:0 5px;
+}
+
+.stackly-row-header h2{
+font-size:24px;
+}
+
+.stackly-view-all{
+font-size:13px;
+}
+
+/* movie slider becomes vertical */
+
+.stackly-movie-slider{
+flex-direction:column;
+gap:20px;
+overflow:visible;
+}
+
+/* movie card */
+
+.stackly-movie-card{
+min-width:100%;
+height:300px;
+}
+
+}
+</style>
 </section>
 <section class="stackly-movie-section">
 
 <div class="stackly-row-header">
 <h2>Ghost Movies</h2>
-<a href="404.html">View All ></a>
+<a href="404.html" class="stackly-view-all">View All</a>
 </div>
-
 <div class="stackly-slider-wrapper">
 
 <button class="stackly-arrow left">&#10094;</button>
@@ -1205,8 +1103,8 @@ slider.scrollLeft+=200;
 <section class="stackly-movie-section">
 
 <div class="stackly-row-header">
-<h2>Love Movies</h2>
-<a href="404.html">View All ></a>
+<h2>LOVE MOVIES</h2>
+<a href="404.html" class="stackly-view-all">View All</a>
 </div>
 
 <div class="stackly-slider-wrapper">
@@ -1356,8 +1254,8 @@ slider.scrollLeft+=200;
 <section class="stackly-movie-section">
 
 <div class="stackly-row-header">
-<h2>Love Movies</h2>
-<a href="404.html">View All ></a>
+<h2>LOVE MOVIES</h2>
+<a href="404.html" class="stackly-view-all">View All</a>
 </div>
 
 <div class="stackly-slider-wrapper">
@@ -1506,8 +1404,8 @@ slider.scrollLeft+=200;
 <section class="stackly-movie-section">
 
 <div class="stackly-row-header">
-<h2>Action Movies</h2>
-<a href="404.html">View All ></a>
+<h2>ACTION MOVIES</h2>
+<a href="404.html" class="stackly-view-all">View All</a>
 </div>
 
 <div class="stackly-slider-wrapper">
@@ -1735,7 +1633,28 @@ slider.scrollLeft+=200;
 </div>
 
 </div>
+<script>
 
+const sections = document.querySelectorAll(".stackly-movie-section");
+
+window.addEventListener("scroll", () => {
+
+sections.forEach(section => {
+
+const sectionTop = section.getBoundingClientRect().top;
+const trigger = window.innerHeight * 0.85;
+
+if(sectionTop < trigger){
+section.classList.add("show");
+}else{
+section.classList.remove("show");
+}
+
+});
+
+});
+
+</script>
 </footer>
 <style>
     .stackly-footer{

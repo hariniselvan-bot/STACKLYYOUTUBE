@@ -11,50 +11,6 @@
 
 <style>
 
-/* ===== CSS CUSTOM PROPERTIES (THEME VARIABLES) ===== */
-:root {
-    --bg-primary: #0d0d0d;
-    --bg-secondary: #111;
-    --bg-card: #1a1a1a;
-    --text-primary: #ffffff;
-    --text-secondary: #e4e4e4;
-    --text-muted: #aaa;
-    --border-color: #333;
-    --header-bg: rgba(0, 0, 0, 0.65);
-    --overlay-dark: rgba(0, 0, 0, 0.65);
-    --shadow-color: rgba(0, 0, 0, 0.7);
-    --gradient-primary: linear-gradient(45deg, #7c3aed, #ff3e7f);
-    --cta-overlay: rgba(0, 0, 0, 0.65);
-    --movie-info-bg: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
-    --button-bg: #000;
-    --button-hover: #111;
-    --buy-button: #c52294;
-    --buy-button-hover: #5d1935;
-    --card-bg: #111;
-}
-
-/* ===== LIGHT THEME ===== */
-.light-theme {
-    --bg-primary: #f5f5f5;
-    --bg-secondary: #ffffff;
-    --bg-card: #ffffff;
-    --text-primary: #1a1a1a;
-    --text-secondary: #333333;
-    --text-muted: #666666;
-    --border-color: #e0e0e0;
-    --header-bg: rgba(255, 255, 255, 0.9);
-    --overlay-dark: rgba(255, 255, 255, 0.7);
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --gradient-primary: linear-gradient(45deg, #7c3aed, #ff3e7f);
-    --cta-overlay: rgba(255, 255, 255, 0.75);
-    --movie-info-bg: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-    --button-bg: #f0f0f0;
-    --button-hover: #e0e0e0;
-    --buy-button: #c52294;
-    --buy-button-hover: #a01575;
-    --card-bg: #ffffff;
-}
-
 *{
 margin:0;
 padding:0;
@@ -63,9 +19,7 @@ font-family:'Outfit',sans-serif;
 }
 
 body{
-background:var(--bg-primary);
-color:var(--text-primary);
-transition: background 0.3s ease, color 0.3s ease;
+background:#443375b3;
 }
 
 /* HEADER */
@@ -135,16 +89,14 @@ cursor:pointer;
 position:absolute;
 top:100%;
 left:0;
-background: var(--bg);
+background:#111;
 padding:18px;
-border-radius:12px;
+border-radius:10px;
 display:none;
 flex-direction:column;
 gap:12px;
-min-width:170px;
-box-shadow:0 15px 50px rgba(0,0,0,0.5);
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:none;
+min-width:160px;
+box-shadow:0 10px 40px rgba(0,0,0,0.7);
 }
 
 /* DESKTOP HOVER */
@@ -205,7 +157,7 @@ top:0;
 left:-100%;
 width:100%;
 height:100vh;
-background:var(--bg-secondary);
+background:linear-gradient(160deg,#0b0b0b,#1a0033,#2a001d);
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -228,7 +180,7 @@ margin:20px 0;
 }
 
 .mobile-menu a{
-color:var(--text-primary);
+color:white;
 font-size:26px;
 text-decoration:none;
 display:flex;
@@ -245,7 +197,7 @@ margin-top:10px;
 .mobile-dropdown a{
 display:block;
 font-size:18px;
-color:var(--text-secondary);
+color:#ddd;
 margin:8px 0;
 }
 
@@ -258,7 +210,7 @@ position:absolute;
 top:30px;
 right:35px;
 font-size:30px;
-color:var(--text-primary);
+color:white;
 cursor:pointer;
 }
 
@@ -303,16 +255,6 @@ transition:0.3s;
 filter:
 drop-shadow(0 0 6px #7c3aed)
 drop-shadow(0 0 12px #ff3e7f);
-}
-.right{
-display:flex;
-align-items:center;
-gap:25px;
-}
-@media(min-width:901px){
-.hamburger{
-display:none;
-}
 }
 </style>
 </head>
@@ -362,21 +304,13 @@ display:none;
 
 <div class="right">
 
-<!-- Theme Toggle -->
-<div class="theme-toggle" onclick="toggleTheme()">
-<i class="fa-solid fa-moon" id="themeIcon"></i>
-</div>
-
-<!-- Search -->
 <i class="fa-solid fa-magnifying-glass search"></i>
 
-<!-- Contact -->
 <a href="login.html" class="contact">
 <i class="fa-solid fa-crown"></i>
 LOGIN NOW
 </a>
 
-<!-- Hamburger (mobile only) -->
 <div class="hamburger" onclick="openMenu()">
 <i class="fa-solid fa-bars"></i>
 </div>
@@ -384,64 +318,6 @@ LOGIN NOW
 </div>
 
 </header>
-
-<style>
-/* Theme Toggle Button Styles */
-/* Theme Toggle Clean Style */
-
-.theme-toggle{
-display:flex;
-align-items:center;
-justify-content:center;
-cursor:pointer;
-font-size:20px;
-color:var(--text-primary);
-background:none;
-border:none;
-margin-left:10px;
-}
-
-.theme-toggle:hover{
-transform:scale(1.15);
-}
-
-.theme-toggle i{
-font-size:20px;
-}@media(max-width:900px){
-
-.right{
-display:flex;
-align-items:center;
-gap:18px;
-}
-
-.search,
-.contact{
-display:none;
-}
-
-.hamburger{
-display:block;
-font-size:22px;
-}
-
-.theme-toggle{
-font-size:22px;
-}
-
-}
-
-@media(max-width: 900px) {
-    .theme-toggle {
-        width: 36px;
-        height: 36px;
-    }
-    
-    .theme-toggle i {
-        font-size: 16px;
-    }
-}
-</style>
 
 <!-- MOBILE MENU -->
 
@@ -479,43 +355,6 @@ font-size:22px;
 
 <script>
 
-// Theme Toggle Functionality
-function toggleTheme() {
-    const body = document.body;
-    const themeIcon = document.getElementById('themeIcon');
-    
-    body.classList.toggle('light-theme');
-    
-    // Toggle between moon and sun icons
-    if (body.classList.contains('light-theme')) {
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-        localStorage.setItem('theme', 'light');
-    } else {
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-        localStorage.setItem('theme', 'dark');
-    }
-}
-
-// Load saved theme on page load
-function loadTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    const body = document.body;
-    const themeIcon = document.getElementById('themeIcon');
-    
-    if (savedTheme === 'light') {
-        body.classList.add('light-theme');
-        if (themeIcon) {
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-        }
-    }
-}
-
-// Run on page load
-document.addEventListener('DOMContentLoaded', loadTheme);
-
 function toggleDropdown(element){
 
 if(window.innerWidth <= 900){
@@ -547,25 +386,22 @@ document.getElementById("mobileDrop").classList.toggle("active");
 
 <div class="stackly-cta-content">
 
-<h1>SHOP MOVIES COLLECTION</h1>
+<h1>DASHBOARD OVERVIEW</h1>
 
 <p>
-Explore and purchase your favorite movies instantly. 
-Discover new releases, trending titles, and exclusive collections in one place.
-Enjoy high-quality streaming and build your personal movie library.
+Monitor your streaming platform performance in real time. 
+Track movie views, user activity, and platform growth with powerful analytics tools.
 </p>
 
 <div class="stackly-cta-buttons">
 
-<a href="movies.html" class="stackly-watch-btn">
-<i class="fa-solid fa-film"></i> Browse Movies
+<a href="404.html" class="stackly-watch-btn">
+<i class="fa-solid fa-chart-line"></i> View Analytics
 </a>
 
-<a href="shop.html" class="stackly-buy-btn">
-<i class="fa-solid fa-cart-shopping"></i> Buy Movies
+<a href="404.html" class="stackly-buy-btn">
+<i class="fa-solid fa-film"></i> Manage Movies
 </a>
-
-</div>
 
 </div>
 
@@ -599,7 +435,7 @@ background-position:center;
 .stackly-cta-overlay{
 position:absolute;
 inset:0;
-background:rgba(0,0,0,0.65);
+background:rgba(0, 0, 0, 0.65);
 }
 
 /* content */
@@ -658,7 +494,6 @@ background:#111;
 .stackly-buy-btn:hover{
 background:#5d1935;
 }
-
 </style>
 
 
@@ -951,23 +786,89 @@ font-family: "Poppins", sans-serif;
 }
 
 body{
-background:var(--bg-primary);
-color:var(--text-primary);
+background:url(bg.jpg)center/cover no-repeat;
+color:white;
 margin:0;
 padding:0;
-width:100%;
 overflow-x:hidden;
-transition: background 0.3s ease, color 0.3s ease;
-}.stackly-movie-cta{
-width:100%;
-min-height:100vh;
-background-size:cover;
-background-position:center;
 }section{
 width:100%;
+padding:40px 6%;
+}.movieCard{
+position:relative;
+min-width:230px;
+height:340px;
+border-radius:12px;
+overflow:hidden;
+cursor:pointer;
+transition:0.4s;
+}@media(max-width:768px){
+
+.movieSlider{
+flex-direction:column;
+overflow:visible;
+gap:20px;
+}
+
+.movieCard{
+min-width:100%;
+height:260px;
+}
+
+.movieInfo{
+opacity:1;
+}
+
+.topHeader{
+flex-direction:column;
+align-items:flex-start;
+gap:5px;
+}
+
+}
+@media(max-width:768px){
+
+.stackly-movie-cta{
+height:420px;
+padding:40px 20px;
+}
+
+.stackly-cta-content{
 max-width:100%;
-margin:0;
-padding:60px 8%;
+padding:10px;
+}
+
+/* fix huge title */
+
+.stackly-cta-content h1{
+font-size:36px;
+letter-spacing:1px;
+line-height:1.2;
+}
+
+/* paragraph */
+
+.stackly-cta-content p{
+font-size:14px;
+margin-bottom:20px;
+}
+
+/* buttons stack */
+
+.stackly-cta-buttons{
+flex-direction:column;
+gap:12px;
+align-items:center;
+}
+
+.stackly-watch-btn,
+.stackly-buy-btn{
+width:200px;
+text-align:center;
+padding:12px 20px;
+font-size:14px;
+}
+
 }
 
 /* ===== SECTION ===== */
@@ -988,12 +889,11 @@ margin-bottom:20px;
 .topHeader h2{
 font-size:26px;
 font-weight:600;
-color:var(--text-primary);
 }
 
 .topHeader p{
 font-size:14px;
-color:var(--text-muted);
+color:#aaa;
 }
 
 /* ===== MOVIE SLIDER ===== */
@@ -1020,7 +920,6 @@ border-radius:12px;
 overflow:hidden;
 cursor:pointer;
 transition:0.4s;
-background:var(--card-bg);
 }
 
 .movieCard img{
@@ -1045,7 +944,7 @@ bottom:0;
 left:0;
 width:100%;
 padding:18px;
-background:var(--movie-info-bg);
+background:linear-gradient(transparent, rgba(0,0,0,0.95));
 opacity:0;
 transition:0.4s;
 }
@@ -1059,12 +958,11 @@ opacity:1;
 .movieInfo h3{
 font-size:18px;
 margin-bottom:6px;
-color:var(--text-primary);
 }
 
 .movieInfo p{
 font-size:13px;
-color:var(--text-muted);
+color:#ccc;
 margin-bottom:10px;
 }
 
@@ -1073,7 +971,7 @@ margin-bottom:10px;
 .movieInfo a{
 display:inline-block;
 text-decoration:none;
-background:var(--buy-button);
+background:#ff3c3c;
 color:white;
 padding:7px 14px;
 border-radius:6px;
@@ -1082,7 +980,7 @@ transition:0.3s;
 }
 
 .movieInfo a:hover{
-background:var(--buy-button-hover);
+background:#ff0000;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -1099,112 +997,178 @@ font-size:20px;
 }
 
 }
+</style>
+<STYLE>
+    /* scroll animation */
 
-/* =========================
-GLOBAL MOBILE FIX
-========================= */
+.top10,
+.popularMovies,
+.trendingRow,
+.disneyPicks,
+.newReleaseRow,
+.familyRow,
+.animationRow{
 
-@media(max-width:768px){
+opacity:0;
+transform:translateX(120px);
+transition:all 0.9s ease;
 
-body{
-padding:15px;
 }
 
-/* HEADER */
+/* when visible */
+
+.top10.show,
+.popularMovies.show,
+.trendingRow.show,
+.disneyPicks.show,
+.newReleaseRow.show,
+.familyRow.show,
+.animationRow.show{
+
+opacity:1;
+transform:translateX(0);
+
+}/* ============================= */
+/* CLEAN MOBILE VIEW FIX */
+/* ============================= */
+
+@media (max-width:768px){
+
+/* remove horizontal scroll */
+html,body{
+width:100%;
+overflow-x:hidden;
+}
+
+/* header */
 
 header{
-padding:15px 20px;
+padding:15px 18px;
 }
 
-/* HERO CTA */
+/* hero */
 
 .stackly-movie-cta{
-height:auto;
-padding:80px 20px;
+height:420px;
+padding:30px 20px;
 }
 
 .stackly-cta-content h1{
-font-size:34px;
+font-size:32px;
+line-height:1.2;
 letter-spacing:1px;
 }
 
 .stackly-cta-content p{
-font-size:15px;
-line-height:1.6;
+font-size:14px;
+margin-bottom:20px;
 }
 
-/* BUTTON STACK */
+/* buttons */
 
 .stackly-cta-buttons{
 flex-direction:column;
-gap:15px;
+gap:12px;
 }
 
 .stackly-watch-btn,
 .stackly-buy-btn{
 width:100%;
+max-width:230px;
 text-align:center;
 }
 
-/* SECTION HEADERS */
+/* section spacing */
+
+section{
+padding:30px 18px;
+margin-bottom:40px;
+}
+
+/* section titles */
 
 .topHeader{
 flex-direction:column;
 align-items:flex-start;
-gap:6px;
+gap:5px;
 }
 
 .topHeader h2{
-font-size:20px;
+font-size:22px;
 }
 
-/* MOVIE SLIDER */
+.topHeader p{
+font-size:13px;
+}
+
+/* movie layout vertical */
 
 .movieSlider{
-gap:14px;
-padding-bottom:15px;
+flex-direction:column;
+overflow:visible;
+gap:22px;
 }
 
-/* MOVIE CARDS */
+/* movie cards */
 
 .movieCard{
-min-width:150px;
-height:230px;
+width:100%;
+min-width:100%;
+height:260px;
+border-radius:14px;
 }
 
-/* FOOTER */
+/* movie overlay always visible */
+
+.movieInfo{
+opacity:1;
+}
+
+/* footer */
 
 .stackly-footer{
-padding:50px 20px;
+padding:50px 25px;
 }
 
 .stackly-footer-container{
 grid-template-columns:1fr;
-gap:30px;
+gap:35px;
 }
 
-}/* =========================
-SCROLL ANIMATION
-========================= */
-
-.reveal{
-opacity:0;
-transform:translateY(60px);
-transition:all 0.8s ease;
+.stackly-apps img{
+width:120px;
 }
 
-.reveal.active{
-opacity:1;
-transform:translateY(0);
-}.movieCard{
-transition:transform .4s ease, box-shadow .4s ease;
+}
+</STYLE>
+<script>
+
+const sections = document.querySelectorAll(
+".top10, .popularMovies, .trendingRow, .disneyPicks, .newReleaseRow, .familyRow, .animationRow"
+);
+
+function scrollAnimation(){
+
+sections.forEach(section => {
+
+const top = section.getBoundingClientRect().top;
+const trigger = window.innerHeight * 0.85;
+
+if(top < trigger){
+section.classList.add("show");
+}else{
+section.classList.remove("show"); // allows animation again
 }
 
-.movieCard:hover{
-transform:scale(1.07);
-box-shadow:0 20px 40px rgba(0,0,0,0.6);
+});
+
 }
-</style>
+
+window.addEventListener("scroll", scrollAnimation);
+
+</script>
+
+
 
 <footer class="stackly-footer">
 
@@ -1404,27 +1368,5 @@ grid-template-columns:1fr;
 }
 
 }
+
 </style>
-<script>
-
-function revealSections(){
-
-const reveals=document.querySelectorAll(".reveal");
-
-reveals.forEach(el=>{
-
-const windowHeight=window.innerHeight;
-const elementTop=el.getBoundingClientRect().top;
-
-if(elementTop < windowHeight-100){
-el.classList.add("active");
-}
-
-});
-
-}
-
-window.addEventListener("scroll",revealSections);
-revealSections();
-
-</script>

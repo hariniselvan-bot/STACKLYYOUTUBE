@@ -10,33 +10,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-:root{
-    --bg:#0d0d0d;
-    --text:#ffffff;
-    --muted:#e4e4e4;
-    --header-bg:rgba(0,0,0,0.65);
-    --card-bg:#111;
-    --accent1:#7c3aed;
-    --accent2:#ff3e7f;
-    --overlay:rgba(0,0,0,0.65);
-    --bg-image-overlay:rgba(0,0,0,0.65);
-    --contact-right-bg:rgba(20,20,20,0.8);
-}
-
-[data-theme="light"]{
-    --bg:#ffffff;
-    --text:#0b1220;
-    --muted:#6b7280;
-    --header-bg:rgba(255,255,255,0.7);
-    --card-bg:#f3f4f6;
-    --accent1:#6d28d9;
-    --accent2:#d9467a;
-    --overlay:rgba(0,0,0,0.2);
-    --bg-image-overlay:rgba(255,255,255,0.85);
-    --contact-right-bg:rgba(255,255,255,0.95);
-}
-
-html,body{transition:background-color .25s ease,color .25s ease}
 
 *{
 margin:0;
@@ -46,8 +19,7 @@ font-family:'Outfit',sans-serif;
 }
 
 body{
-background:var(--bg);
-color:var(--text);
+background:#0d0d0d;
 }
 
 /* HEADER */
@@ -58,7 +30,7 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 padding:20px 80px;
-background:var(--header-bg);
+background:rgba(0,0,0,0.65);
 backdrop-filter:blur(12px);
 position:sticky;
 top:0;
@@ -73,14 +45,14 @@ align-items:center;
 gap:12px;
 font-size:34px;
 font-weight:600;
-color:var(--text);
+color:white;
 }
 
 .logo-icon{
 width:36px;
 height:36px;
 border-radius:10px;
-background:linear-gradient(45deg,var(--accent1),var(--accent2));
+background:linear-gradient(45deg,#7c3aed,#ff3e7f);
 display:flex;
 align-items:center;
 justify-content:center;
@@ -105,7 +77,7 @@ display:flex;
 align-items:center;
 gap:8px;
 text-decoration:none;
-color:var(--muted);
+color:#e4e4e4;
 font-size:16px;
 font-weight:500;
 cursor:pointer;
@@ -117,16 +89,14 @@ cursor:pointer;
 position:absolute;
 top:100%;
 left:0;
-background: var(--bg);
+background:#111;
 padding:18px;
-border-radius:12px;
+border-radius:10px;
 display:none;
 flex-direction:column;
 gap:12px;
-min-width:170px;
-box-shadow:0 15px 50px rgba(0,0,0,0.5);
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:none;
+min-width:160px;
+box-shadow:0 10px 40px rgba(0,0,0,0.7);
 }
 
 /* DESKTOP HOVER */
@@ -154,13 +124,13 @@ gap:30px;
 }
 
 .search{
-color:var(--text);
+color:white;
 font-size:18px;
 cursor:pointer;
 }
 
 .contact{
-background:linear-gradient(90deg,var(--accent1),var(--accent2));
+background:linear-gradient(90deg,#7c3aed,#ff3e7f);
 padding:12px 26px;
 border-radius:35px;
 color:white;
@@ -175,7 +145,7 @@ text-decoration:none;
 .hamburger{
 display:none;
 font-size:24px;
-color:var(--text);
+color:white;
 cursor:pointer;
 }
 
@@ -210,7 +180,7 @@ margin:20px 0;
 }
 
 .mobile-menu a{
-color:var(--text);
+color:white;
 font-size:26px;
 text-decoration:none;
 display:flex;
@@ -227,7 +197,7 @@ margin-top:10px;
 .mobile-dropdown a{
 display:block;
 font-size:18px;
-color:var(--muted);
+color:#ddd;
 margin:8px 0;
 }
 
@@ -240,7 +210,7 @@ position:absolute;
 top:30px;
 right:35px;
 font-size:30px;
-color:var(--text);
+color:white;
 cursor:pointer;
 }
 
@@ -274,8 +244,8 @@ object-fit:contain;
 
 /* double shade effect */
 filter:
-drop-shadow(0 0 3px var(--accent1))
-drop-shadow(0 0 6px var(--accent2));
+drop-shadow(0 0 3px #7c3aed)
+drop-shadow(0 0 6px #ff3e7f);
 
 transition:0.3s;
 }
@@ -283,8 +253,8 @@ transition:0.3s;
 /* hover glow */
 .logo img:hover{
 filter:
-drop-shadow(0 0 6px var(--accent1))
-drop-shadow(0 0 12px var(--accent2));
+drop-shadow(0 0 6px #7c3aed)
+drop-shadow(0 0 12px #ff3e7f);
 }
 </style>
 </head>
@@ -454,7 +424,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-color:var(--text);
+color:white;
 font-family:Poppins;
 overflow:hidden;
 
@@ -463,12 +433,12 @@ background-size:cover;
 background-position:center;
 }
 
-/* dark / light overlay */
+/* dark overlay */
 
 .stackly-cta-overlay{
 position:absolute;
 inset:0;
-background:var(--bg-image-overlay);
+background:rgba(0,0,0,0.65);
 }
 
 /* content */
@@ -488,7 +458,7 @@ margin-bottom:20px;
 
 .stackly-cta-content p{
 font-size:18px;
-color:var(--muted);
+color:#d1d5db;
 margin-bottom:30px;
 }
 
@@ -501,17 +471,17 @@ gap:20px;
 }
 
 .stackly-watch-btn{
-background:var(--card-bg);
+background:#000;
 padding:14px 30px;
 border-radius:8px;
 text-decoration:none;
-color:var(--text);
+color:white;
 font-size:16px;
 transition:0.3s;
 }
 
 .stackly-buy-btn{
-background:linear-gradient(90deg,var(--accent1),var(--accent2));
+background:#c52294;
 padding:14px 30px;
 border-radius:8px;
 text-decoration:none;
@@ -521,11 +491,11 @@ transition:0.3s;
 }
 
 .stackly-watch-btn:hover{
-background:rgba(255,255,255,0.04);
+background:#111;
 }
 
 .stackly-buy-btn:hover{
-filter:brightness(.95);
+background:#5d1935;
 }
 </style>
 
@@ -612,7 +582,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 padding:80px 20px;
-background:var(--bg);
+background:#0d0d0d;
 position:relative;
 overflow:hidden;
 }
@@ -624,7 +594,7 @@ content:"";
 position:absolute;
 width:500px;
 height:500px;
-background:linear-gradient(45deg,var(--accent1),var(--accent2));
+background:linear-gradient(45deg,#7c3aed,#ff3e7f);
 filter:blur(160px);
 top:-150px;
 left:-150px;
@@ -636,7 +606,7 @@ content:"";
 position:absolute;
 width:500px;
 height:500px;
-background:linear-gradient(45deg,var(--accent2),var(--accent1));
+background:linear-gradient(45deg,#ff3e7f,#7c3aed);
 filter:blur(160px);
 bottom:-150px;
 right:-150px;
@@ -662,7 +632,7 @@ margin-bottom:20px;
 }
 
 .contact-left p{
-color:var(--muted);
+color:#aaa;
 margin-bottom:35px;
 line-height:1.6;
 }
@@ -677,22 +647,22 @@ gap:20px;
 display:flex;
 align-items:center;
 gap:14px;
-color:var(--muted);
+color:#ddd;
 font-size:16px;
 }
 
 .info-box i{
-color:var(--accent2);
+color:#ff3e7f;
 font-size:18px;
 }
 
 /* RIGHT SIDE FORM */
 
 .contact-right{
-background:var(--contact-right-bg);
+background:rgba(20,20,20,0.8);
 padding:40px;
 border-radius:16px;
-border:1px solid rgba(0,0,0,0.06);
+border:1px solid rgba(255,255,255,0.08);
 backdrop-filter:blur(12px);
 }
 
@@ -707,10 +677,10 @@ margin-bottom:25px;
 .input-box textarea{
 width:100%;
 padding:14px;
-background:var(--card-bg);
-border:1px solid rgba(0,0,0,0.2);
+background:#111;
+border:1px solid #333;
 border-radius:8px;
-color:var(--text);
+color:white;
 outline:none;
 resize:none;
 }
@@ -725,7 +695,7 @@ height:120px;
 position:absolute;
 top:14px;
 left:14px;
-color:var(--muted);
+color:#777;
 font-size:14px;
 pointer-events:none;
 transition:.3s;
@@ -738,9 +708,9 @@ transition:.3s;
 top:-8px;
 left:10px;
 font-size:12px;
-background:var(--bg);
+background:#0d0d0d;
 padding:0 6px;
-color:var(--accent2);
+color:#ff3e7f;
 }
 
 /* BUTTON */
@@ -750,7 +720,7 @@ width:100%;
 padding:14px;
 border:none;
 border-radius:30px;
-background:linear-gradient(90deg,var(--accent1),var(--accent2));
+background:linear-gradient(90deg,#7c3aed,#ff3e7f);
 color:white;
 font-weight:600;
 cursor:pointer;
@@ -759,7 +729,7 @@ transition:.3s;
 
 .contact-btn:hover{
 transform:scale(1.05);
-box-shadow:0 10px 30px rgba(255,0,150,0.15);
+box-shadow:0 10px 30px rgba(255,0,150,0.4);
 }
 
 /* MOBILE */
@@ -799,67 +769,6 @@ window.location.href = "404.html";
 
 </script>
 
-<script>
-// Theme toggle: injects a button into the header and persists selection
-(function(){
-    const root = document.documentElement;
-    const stored = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initial = stored || (prefersDark ? 'dark' : 'light');
-    root.setAttribute('data-theme', initial);
-
-    function updateIcon(btn){
-        if(!btn) return;
-        const icon = btn.querySelector('i');
-        if(root.getAttribute('data-theme') === 'dark') icon.className = 'fa-solid fa-moon';
-        else icon.className = 'fa-solid fa-sun';
-    }
-
-    function toggleTheme(){
-        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        updateIcon(document.getElementById('theme-toggle'));
-    }
-
-    // create button
-    const btn = document.createElement('button');
-    btn.id = 'theme-toggle';
-    btn.className = 'theme-toggle';
-    btn.setAttribute('aria-label','Toggle theme');
-    btn.style.background = 'transparent';
-    btn.style.border = 'none';
-    btn.style.color = 'var(--text)';
-    btn.style.fontSize = '18px';
-    btn.style.cursor = 'pointer';
-    btn.style.display = 'inline-flex';
-    btn.style.alignItems = 'center';
-    btn.style.gap = '8px';
-    const i = document.createElement('i');
-    i.className = initial === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
-    btn.appendChild(i);
-
-    const right = document.querySelector('.right');
-    if(right){
-        // insert before the hamburger so it stays in the right area
-        const hamburger = right.querySelector('.hamburger');
-        right.insertBefore(btn, hamburger || null);
-        btn.addEventListener('click', toggleTheme);
-    }
-
-    // react to system changes only if user hasn't chosen a theme
-    if(window.matchMedia){
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-            if(!localStorage.getItem('theme')){
-                const sys = e.matches ? 'dark' : 'light';
-                root.setAttribute('data-theme', sys);
-                updateIcon(document.getElementById('theme-toggle'));
-            }
-        });
-    }
-
-})();
-</script>
 
 <footer class="stackly-footer">
 
