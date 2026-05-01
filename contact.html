@@ -290,13 +290,8 @@ drop-shadow(0 0 12px #ff3e7f);
 <li>
 <a href="pages.html"><i class="fa-solid fa-file"></i> DASHBOARD </a>
 </li>
-
 <li>
-<a href="shop.html"><i class="fa-solid fa-bag-shopping"></i> SHOP</a>
-</li>
-
-<li>
-<a href="contact.html"><i class="fa-solid fa-newspaper"></i> CONTACT US</a>
+<a href="contact.html"  style="color: #ff3e7f;"><i class="fa-solid fa-newspaper"></i> CONTACT US</a>
 </li>
 
 </ul>
@@ -345,7 +340,6 @@ LOGIN NOW
 <li><a href="movies.html"><i class="fa-solid fa-film"></i> MOVIES</a></li>
 <li><a href="about.html"><i class="fa-solid fa-heart"></i> ABOUT US</a></li>
 <li><a href="pages.html"><i class="fa-solid fa-file"></i> DASHBOARD</a></li>
-<li><a href="shop.html"><i class="fa-solid fa-bag-shopping"></i> SHOP</a></li>
 <li><a href="contact.html"><i class="fa-solid fa-bag-shopping"></i> CONTACT US</a></li>
 <li><a href="login.html"><i class="fa-solid fa-newspaper"></i> LOGIN</a></li>
 
@@ -379,125 +373,163 @@ document.getElementById("mobileDrop").classList.toggle("active");
 }
 
 </script>
+<!-- ===== MOVIE ABOUT HERO ===== -->
+<section class="movie-hero">
 
-<section class="stackly-movie-cta">
+  <!-- MOVIE SVG BACKGROUND -->
+  <svg class="movie-bg" viewBox="0 0 1440 400" preserveAspectRatio="none">
+    
+    <!-- Film Strip -->
+    <g class="film-strip">
+      <rect x="0" y="150" width="1440" height="100" fill="none" stroke="#00d4ff" stroke-width="2"/>
+      
+      <!-- Film holes -->
+      <g fill="#ff008c">
+        <rect x="20" y="160" width="10" height="10"/>
+        <rect x="60" y="160" width="10" height="10"/>
+        <rect x="100" y="160" width="10" height="10"/>
+        <rect x="140" y="160" width="10" height="10"/>
+        <rect x="180" y="160" width="10" height="10"/>
+        <rect x="220" y="160" width="10" height="10"/>
+      </g>
 
-<div class="stackly-cta-overlay"></div>
+      <!-- Bottom holes -->
+      <g fill="#ff008c">
+        <rect x="20" y="230" width="10" height="10"/>
+        <rect x="60" y="230" width="10" height="10"/>
+        <rect x="100" y="230" width="10" height="10"/>
+        <rect x="140" y="230" width="10" height="10"/>
+        <rect x="180" y="230" width="10" height="10"/>
+        <rect x="220" y="230" width="10" height="10"/>
+      </g>
+    </g>
 
-<div class="stackly-cta-content">
+    <!-- Play Icons -->
+    <polygon class="play-icon" points="50,50 80,70 50,90"/>
+    <polygon class="play-icon" points="200,80 230,100 200,120"/>
+    <polygon class="play-icon" points="350,40 380,60 350,80"/>
 
-<h1>CONTACT SUPPORT</h1>
+  </svg>
 
-<p>
-Need help or have questions about our streaming platform? 
-Reach out to our team anytime. We’re here to assist you with technical support, 
-account issues, or partnership inquiries.
-</p>
+  <!-- CONTENT -->
+  <div class="hero-content">
+    <h1>CONTACT US</h1>
+    <p class="breadcrumb">Home / <span>Contact Us</span></p>
+  </div>
 
-<div class="stackly-cta-buttons">
-
-<a href="login.html" class="stackly-watch-btn">
-<i class="fa-solid fa-paper-plane"></i> Send Message
-</a>
-
-<a href="mailto:support@stackly.com" class="stackly-buy-btn">
-<i class="fa-solid fa-envelope"></i> Email Support
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+  <!-- FLOATING CARDS -->
+  <div class="card left">🎬 New Movies</div>
+  <div class="card right">🔥 Trending Shows</div>
 
 </section>
 <style>
-    .stackly-movie-cta{
-background-image:url("h2.webp");
-}
-    .stackly-movie-cta{
-position:relative;
-height:500px;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-font-family:Poppins;
-overflow:hidden;
-
-/* you will add your image here */
-background-size:cover;
-background-position:center;
+    .movie-hero {
+  position: relative;
+  height: 65vh;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
 }
 
-/* dark overlay */
-
-.stackly-cta-overlay{
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.65);
+/* TEXT */
+.hero-content h1 {
+  font-size: 70px;
+  background: linear-gradient(90deg, #ff008c, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* content */
-
-.stackly-cta-content{
-position:relative;
-max-width:700px;
-padding:20px;
+.breadcrumb {
+  margin-top: 10px;
+  color: #aaa;
 }
 
-.stackly-cta-content h1{
-font-size:70px;
-font-weight:700;
-letter-spacing:3px;
-margin-bottom:20px;
+.breadcrumb span {
+  color: #ff008c;
 }
 
-.stackly-cta-content p{
-font-size:18px;
-color:#d1d5db;
-margin-bottom:30px;
+/* SVG BG */
+.movie-bg {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
 }
 
-/* buttons */
-
-.stackly-cta-buttons{
-display:flex;
-justify-content:center;
-gap:20px;
+/* Film animation */
+.film-strip {
+  animation: moveFilm 20s linear infinite;
 }
 
-.stackly-watch-btn{
-background:#000;
-padding:14px 30px;
-border-radius:8px;
-text-decoration:none;
-color:white;
-font-size:16px;
-transition:0.3s;
+@keyframes moveFilm {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-.stackly-buy-btn{
-background:#c52294;
-padding:14px 30px;
-border-radius:8px;
-text-decoration:none;
-color:white;
-font-size:16px;
-transition:0.3s;
+/* Play icon glow */
+.play-icon {
+  fill: #ff008c;
+  opacity: 0.6;
+  animation: pulse 2s infinite;
 }
 
-.stackly-watch-btn:hover{
-background:#111;
+@keyframes pulse {
+  0%,100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 1; }
 }
 
-.stackly-buy-btn:hover{
-background:#5d1935;
+/* FLOATING CARDS */
+.card {
+  position: absolute;
+  padding: 15px 25px;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #ff008c, #7a00ff);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  animation: float 4s ease-in-out infinite;
+}
+
+.left {
+  top: 60px;
+  left: 100px;
+}
+
+.right {
+  top: 80px;
+  right: 100px;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .card {
+    display: none;
+  }
 }
 </style>
+<script>
+    // Random floating movement for play icons
+const icons = document.querySelectorAll('.play-icon');
+
+icons.forEach(icon => {
+  setInterval(() => {
+    icon.style.transform = `translateY(${Math.random() * 20}px) scale(1.2)`;
+  }, 2000);
+});
+</script>
 
 <!-- CONTACT SECTION -->
 

@@ -418,7 +418,6 @@ font-size:14px;
 <li><a href="movies.html"><i class="fa-solid fa-film"></i> MOVIES</a></li>
 <li><a href="about.html"><i class="fa-solid fa-heart"></i> ABOUT US</a></li>
 <li><a href="pages.html"><i class="fa-solid fa-file"></i> DASHBOARD</a></li>
-<li><a href="shop.html"><i class="fa-solid fa-bag-shopping"></i> SHOP</a></li>
 <li><a href="contact.html"><i class="fa-solid fa-newspaper"></i> CONTACT US</a></li>
 
 </ul>
@@ -465,96 +464,11 @@ font-size:14px;
 <li><a href="movies.html"><i class="fa-solid fa-film"></i> MOVIES</a></li>
 <li><a href="about.html"><i class="fa-solid fa-heart"></i> ABOUT</a></li>
 <li><a href="pages.html"><i class="fa-solid fa-file"></i> DASHBOARD</a></li>
-<li><a href="shop.html"><i class="fa-solid fa-bag-shopping"></i> SHOP</a></li>
 <li><a href="contact.html"><i class="fa-solid fa-bag-shopping"></i> CONTACT US</a></li>
 <li><a href="login.html"><i class="fa-solid fa-newspaper"></i> LOGIN</a></li>
 
 </ul>
 
-</div>
-
-<!-- TOP SEARCH BAR -->
-
-<div class="topBar">
-
-<div class="searchBar">
-<input type="text" placeholder="Search">
-<button><i class="fa fa-search"></i></button>
-</div>
-
-<div class="icons">
-<i class="fa fa-plus"></i>
-<i class="fa fa-bell"></i>
-
-<div class="profile">
-<img src="women.webp">
-</div>
-</div>
-
-</div>
-
-<!-- HERO -->
-
-<section class="heroSlider">
-
-<div class="slide active">
-
-<img src="cocobg.webp">
-
-<div class="heroOverlay">
-
-<h1>GET 30% OFF</h1>
-<p>MAKE YOUR DEAL NOW</p>
-
-<div class="heroMeta">
-<span><i class="fa fa-star"></i> Stackly Cars</span>
-<span><i class="fa fa-clock"></i> 45 Lakh</span>
-<span><i class="fa fa-star"></i> 9.5 / 10</span>
-</div>
-
-<button class="heroBtn">BOOK NOW</button>
-
-</div>
-</div>
-
-<div class="slide">
-
-<img src="frozen.webp">
-
-<div class="heroOverlay">
-
-<h1>The Lost Galaxy</h1>
-<p>An interstellar adventure across unknown planets.</p>
-
-<div class="heroMeta">
-<span><i class="fa fa-star"></i> Stackly Cinema</span>
-<span><i class="fa fa-clock"></i> 55 min</span>
-<span><i class="fa fa-star"></i> 9.2 / 10</span>
-</div>
-
-<button class="heroBtn">BOOK NOW</button>
-
-</div>
-</div>
-
-<div class="slide">
-
-<img src="KUNG.webp">
-
-<div class="heroOverlay">
-
-<h1>Midnight Chase</h1>
-<p>A high speed crime thriller through neon city streets.</p>
-
-<div class="heroMeta">
-<span><i class="fa fa-star"></i> Stackly subscriptions</span>
-<span><i class="fa fa-clock"></i> 42 min</span>
-<span><i class="fa fa-star"></i> 8.8 / 10</span>
-</div>
-
-<button class="heroBtn">BOOK NOW</button>
-
-</div>
 </div>
 
 </section>
@@ -603,2140 +517,1069 @@ el.nextElementSibling.classList.toggle("active");
 
 </body>
 </html>
+<section class="hero">
 
-<section class="about-section">
+  <div class="hero-overlay"></div>
 
-<!-- LEFT IMAGE -->
-<div class="about-left reveal-left">
-<img src="h3-testimonial-3.webp" alt="">
-</div>
+  <div class="hero-content">
+    <p class="tag">NOW STREAMING</p>
 
-<!-- RIGHT CONTENT -->
-<div class="about-right">
+    <h1>
+      Unlimited Movies,<br>
+      TV Shows & More.
+    </h1>
 
-<div class="text-block reveal-right">
-<h5>About Stackly</h5>
+    <p class="desc">
+      Watch the latest blockbusters, binge-worthy series, and exclusive originals
+      anytime, anywhere. Experience entertainment like never before.
+    </p>
 
-<h1>
-Your ultimate destination for <br>
-<span>movies, shows & creators</span>
-</h1>
+    <div class="hero-buttons">
+      <button class="btn-primary">▶ Watch Now</button>
+      <button class="btn-secondary">+ My List</button>
+    </div>
+  </div>
 
-<p>
-Stackly is a next-generation streaming platform where you can
-watch trending movies, TV shows, reels and creator content
-all in one place. Discover entertainment, explore new creators,
-and enjoy unlimited streaming anytime.
-</p>
+  <!-- Floating Video Card -->
+  <div class="video-card">
+    <img src="h1.webp" alt="tv">
+  </div>
 
-<button class="contact-btn">Explore Platform ↗</button>
-</div>
+  <!-- Glow Line -->
+  <div class="wave"></div>
 
-<!-- SMALL CARDS -->
-<div class="cards">
+</section>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-<div class="card reveal-right">
-<img src="pos4.webp">
-<h3>Unlimited Streaming</h3>
-<p>Watch movies, series and short videos anytime</p>
-</div>
+.hero {
+  position: relative;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 60px;
+  overflow: hidden;
+  background: url('https://images.unsplash.com/photo-1606813907291-d86efa9b94db') no-repeat center/cover;
+}
 
-<div class="card reveal-right">
-<img src="pos1.webp">
-<h3>Creator Community</h3>
-<p>Upload videos and build your audience globally</p>
-</div>
+/* Dark overlay */
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #000 40%, rgba(0,0,0,0.3));
+  top: 0;
+  left: 0;
+}
 
-</div>
+/* Content */
+.hero-content {
+  position: relative;
+  max-width: 600px;
+  z-index: 2;
+}
 
-<!-- COUNTERS -->
-<div class="counter-section">
+.tag {
+  color: #ff007f;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 
-<div class="counter-box">
-<h2 class="counter" data-target="25">0</h2>
-<p>Million Monthly Viewers</p>
-</div>
+.hero h1 {
+  font-size: 60px;
+  line-height: 1.2;
+  font-weight: 700;
+}
 
-<div class="counter-box">
-<h2 class="counter" data-target="120">0</h2>
-<p>Active Creators</p>
-</div>
+.desc {
+  margin-top: 20px;
+  color: #ccc;
+  line-height: 1.6;
+}
 
-<div class="counter-box">
-<h2 class="counter" data-target="500">0</h2>
-<p>Movies & Shows Available</p>
-</div>
+/* Buttons */
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
 
-</div>
+.btn-primary {
+  background: linear-gradient(45deg, #ff007f, #ff4d94);
+  border: none;
+  padding: 12px 24px;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
 
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 12px 24px;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: black;
+}
+
+/* Floating Video Card */
+.video-card {
+  position: absolute;
+  right: 80px;
+  top: 120px;
+  width: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  animation: float 3s ease-in-out infinite;
+}
+
+.video-card img {
+  width: 100%;
+  display: block;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Glow Wave */
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background: radial-gradient(circle at 50% 50%, rgba(0,200,255,0.5), transparent 70%);
+  filter: blur(40px);
+  animation: waveMove 6s infinite alternate;
+}
+
+@keyframes waveMove {
+  from { transform: translateX(-50px); }
+  to { transform: translateX(50px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .video-card {
+    position: static;
+    margin-top: 30px;
+    width: 100%;
+  }
+}
+</style>
+<script>
+    // Simple button click effect
+document.querySelector(".btn-primary").addEventListener("click", () => {
+  alert("Play button clicked 🎬");
+});
+</script>
+
+<section class="hero-scroll-text">
+
+<div class="scroll-wrapper">
+  <div class="scroll-track">
+    <h1>STACKLY YOUTUBE</h1>
+    <h1>MOVIES AND DRAMA</h1> <!-- duplicate for loop -->
+  </div>
 </div>
 
 </section>
 
-
 <style>
-/* MOBILE ABOUT SECTION */
 
-@media(max-width:768px){
-
-.about-section{
-flex-direction:column;
-padding:60px 20px;
-gap:40px;
-text-align:center;
+/* SECTION */
+.hero-scroll-text{
+    position:relative;
+    height:200px;
+    overflow:hidden;
+    background:linear-gradient(90deg,#020617,#031a33,#020617);
+    display:flex;
+    align-items:center;
 }
 
-/* LEFT IMAGE */
-
-.about-left img{
-width:100%;
-max-width:320px;
-margin:auto;
-display:block;
+/* WRAPPER */
+.scroll-wrapper{
+    width:100%;
+    overflow:hidden;
 }
 
-/* TEXT AREA */
-
-.text-block h1{
-font-size:26px;
-line-height:1.3;
-}
-
-.text-block p{
-font-size:14px;
-margin:15px auto;
-max-width:90%;
-}
-
-/* BUTTON */
-
-.contact-btn{
-width:100%;
-padding:12px;
-margin-top:10px;
-}
-
-/* CARDS */
-
-.cards{
-flex-direction:column;
-gap:20px;
-margin-top:30px;
-}
-
-.card{
-width:100%;
-text-align:center;
-}
-
-.card img{
-width:100%;
-border-radius:12px;
-}
-
-/* COUNTERS */
-
-.counter-section{
-flex-direction:column;
-gap:25px;
-margin-top:30px;
-}
-
-.counter-box{
-text-align:center;
-}
-
-.counter-box h2{
-font-size:30px;
-}
-
-}
-.about-section{
-display:flex;
-gap:50px;
-padding:100px 8%;
-align-items:center;
-flex-wrap:wrap;
-background:url(BBG.jpg)center/cover no-repeat;
-color:white;
-}
-
-/* LEFT */
-
-.about-left{
-flex:1;
-}
-
-.about-left img{
-width:100%;
-border-radius:25px;
-}
-
-/* RIGHT */
-
-.about-right{
-flex:1.2;
+/* TRACK */
+.scroll-track{
+    display:flex;
+    width:max-content;
+    animation:scrollText 18s linear infinite;
 }
 
 /* TEXT */
-
-.text-block h5{
-background:#1f1b2e;
-display:inline-block;
-padding:6px 14px;
-border-radius:20px;
-font-size:14px;
-margin-bottom:15px;
-}
-
-.text-block h1{
-font-size:42px;
-margin-bottom:20px;
-line-height:1.2;
-}
-
-.text-block h1 span{
-color:#8b5cf6;
-}
-
-.text-block p{
-color:#cbd5f5;
-margin-bottom:20px;
-max-width:500px;
-line-height:1.6;
-}
-
-.contact-btn{
-padding:12px 28px;
-background:linear-gradient(90deg,#3b82f6,#8b5cf6);
-color:#fff;
-border:none;
-border-radius:30px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.contact-btn:hover{
-transform:translateY(-3px);
-}
-
-/* CARDS */
-
-.cards{
-display:flex;
-gap:20px;
-margin-top:40px;
-flex-wrap:wrap;
-}
-
-.card{
-background:#1f1b2e;
-padding:20px;
-border-radius:20px;
-flex:1;
-min-width:220px;
-box-shadow:0 5px 20px rgba(0,0,0,0.3);
-}
-
-.card img{
-width:100%;
-border-radius:15px;
-margin-bottom:15px;
-}
-
-.card h3{
-margin-bottom:6px;
-}
-
-.card p{
-color:#cbd5f5;
-font-size:14px;
-}
-
-/* COUNTER */
-
-.counter-section{
-display:flex;
-gap:60px;
-margin-top:50px;
-flex-wrap:wrap;
-}
-
-.counter-box h2{
-font-size:42px;
-font-weight:700;
-color:#8b5cf6;
-}
-
-.counter-box p{
-color:#cbd5f5;
-}
-
-/* REVEAL ANIMATION */
-
-.reveal-left{
-opacity:0;
-transform:translateX(-100px);
-transition:1s;
-}
-
-.reveal-right{
-opacity:0;
-transform:translateX(100px);
-transition:1s;
-}
-
-.active{
-opacity:1;
-transform:translateX(0);
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.about-section{
-flex-direction:column;
-padding:60px 20px;
-text-align:center;
-}
-
-.text-block h1{
-font-size:28px;
-}
-
-.cards{
-flex-direction:column;
-}
-
-.counter-section{
-flex-direction:column;
-align-items:center;
-gap:25px;
-}
-
-}
-
-</style>
-
-
-<script>
-
-/* reveal animation */
-
-function reveal(){
-
-const reveals = document.querySelectorAll(".reveal-left, .reveal-right");
-
-reveals.forEach(el=>{
-
-const windowHeight = window.innerHeight;
-const elementTop = el.getBoundingClientRect().top;
-const revealPoint = 100;
-
-if(elementTop < windowHeight - revealPoint){
-el.classList.add("active");
-}
-
-});
-
-}
-
-window.addEventListener("scroll",reveal);
-reveal();
-
-
-/* counter animation */
-
-const counters = document.querySelectorAll('.counter');
-const speed = 200;
-
-const runCounter = () => {
-
-counters.forEach(counter => {
-
-const updateCount = () => {
-
-const target = +counter.getAttribute('data-target');
-const count = +counter.innerText;
-
-const inc = target / speed;
-
-if(count < target){
-
-counter.innerText = Math.ceil(count + inc);
-setTimeout(updateCount,15);
-
-}else{
-
-counter.innerText = target + "+";
-
-}
-
-};
-
-updateCount();
-
-});
-
-};
-
-
-window.addEventListener("scroll",()=>{
-
-const counterSection = document.querySelector(".counter-section");
-const sectionTop = counterSection.getBoundingClientRect().top;
-
-if(sectionTop < window.innerHeight - 100){
-runCounter();
-}
-
-});
-
-</script>
-<section class="projects-section">
-
-<div class="projects-header">
-<span class="tag">• Trending Now</span>
-<h1>Popular <span>Movies & Shows</span></h1>
-</div>
-
-<div class="projects-container">
-
-<div class="project-card fade-card">
-<img src="di3.webp">
-<div class="overlay">
-<p class="category">• Action</p>
-<h3>Midnight Chase</h3>
-</div>
-</div>
-
-<div class="project-card fade-card">
-<img src="di12.webp">
-<div class="overlay">
-<p class="category">• Sci-Fi</p>
-<h3>The Lost Galaxy</h3>
-</div>
-</div>
-
-<div class="project-card fade-card">
-<img src="di13.webp">
-<div class="overlay">
-<p class="category">• Thriller</p>
-<h3>Dark Horizon</h3>
-</div>
-</div>
-
-<div class="project-card fade-card">
-<img src="di8.webp">
-<div class="overlay">
-<p class="category">• Adventure</p>
-<h3>Journey Beyond</h3>
-</div>
-</div>
-
-<div class="project-card fade-card">
-<img src="di12.webp">
-<div class="overlay">
-<p class="category">• Drama</p>
-<h3>City Lights</h3>
-</div>
-</div>
-
-<div class="project-card fade-card">
-<img src="pos2.webp">
-<div class="overlay">
-<p class="category">• Comedy</p>
-<h3>Laugh Factory</h3>
-</div>
-</div>
-
-<div class="project-card fade-card">
-<img src="pos3.webp">
-<div class="overlay">
-<p class="category">• Mystery</p>
-<h3>Hidden Truth</h3>
-</div>
-</div>
-
-<div class="project-card fade-card">
-<img src="pos4.webp">
-<div class="overlay">
-<p class="category">• Documentary</p>
-<h3>Wild Planet</h3>
-</div>
-</div>
-
-<div class="project-card fade-card">
-<img src="pos5.webp">
-<div class="overlay">
-<p class="category">• Horror</p>
-<h3>Nightfall</h3>
-</div>
-</div>
-
-<div class="project-card fade-card">
-<img src="pos6.webp">
-<div class="overlay">
-<p class="category">• Fantasy</p>
-<h3>Dragon Realm</h3>
-</div>
-</div>
-
-<div class="project-card fade-card">
-<img src="pos7.webp">
-<div class="overlay">
-<p class="category">• Crime</p>
-<h3>Underworld Files</h3>
-</div>
-</div>
-
-<div class="project-card fade-card">
-<img src="pos8.webp">
-<div class="overlay">
-<p class="category">• Romance</p>
-<h3>Love Stories</h3>
-</div>
-</div>
-
-</div>
-
-</section>
-
-
-
-<style>
-
-.projects-section{
-padding:100px 8%;
-background:url(h1.webp)center/cover no-repeat;
-color:rgb(255, 255, 255);
-}
-
-.projects-header{
-text-align:center;
-margin-bottom:60px;
-}
-
-.projects-header .tag{
-background:#1f1b2e;
-padding:6px 15px;
-border-radius:20px;
-font-size:14px;
-}
-
-.projects-header h1{
-font-size:42px;
-margin-top:20px;
-}
-
-.projects-header h1 span{
-color:#8b5cf6;
-}
-
-/* GRID */
-
-.projects-container{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:30px;
-}
-
-/* CARD */
-
-.project-card{
-position:relative;
-overflow:hidden;
-border-radius:25px;
-height:350px;
-cursor:pointer;
-
-opacity:0;
-transform:translateY(60px);
-transition:0.8s ease;
-}
-
-.project-card.active{
-opacity:1;
-transform:translateY(0);
-}
-
-.project-card img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:0.5s ease;
-}
-
-.project-card:hover img{
-transform:scale(1.1);
-}
-
-/* OVERLAY */
-
-.overlay{
-position:absolute;
-bottom:0;
-left:0;
-right:0;
-padding:30px;
-background:linear-gradient(to top, rgba(0,0,0,0.85), transparent);
-}
-
-.category{
-font-size:14px;
-margin-bottom:8px;
-color:#cbd5f5;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:1000px){
-.projects-container{
-grid-template-columns:repeat(2,1fr);
-}
-}
-
-@media(max-width:600px){
-.projects-container{
-grid-template-columns:1fr;
-}
-}
-
-</style>
-
-
-
-<script>
-
-function fadeProjects(){
-
-const cards = document.querySelectorAll(".fade-card");
-
-cards.forEach((card,index)=>{
-
-const windowHeight = window.innerHeight;
-const elementTop = card.getBoundingClientRect().top;
-const revealPoint = 100;
-
-if(elementTop < windowHeight - revealPoint){
-
-setTimeout(()=>{
-card.classList.add("active");
-}, index * 120);
-
-}
-
-});
-
-}
-
-window.addEventListener("scroll",fadeProjects);
-fadeProjects();
-
-</script>
-
-<section class="commitment-section">
-
-<div class="commitment-container">
-
-<!-- LEFT CONTENT -->
-
-<div class="left-content">
-
-<span class="tag">• Our Platform</span>
-
-<h1 class="main-heading">
-Dedicated to seamless <br>
-<em>streaming entertainment</em>
-</h1>
-
-<p class="description">
-Stackly is built to deliver a smooth streaming experience where
-users can explore trending movies, series, and creator content.
-Our platform focuses on performance, discovery, and unlimited entertainment.
-</p>
-
-<a href="contact.html" class="contact-btn">
-Explore Platform ↗
-</a>
-
-<div class="quote">
-“Delivering endless entertainment through movies, series and creators
-all in one powerful streaming platform.”
-</div>
-
-</div>
-
-
-<!-- RIGHT CONTENT -->
-
-<div class="right-content">
-
-<div class="info-card">
-<h3>Unlimited Streaming Experience</h3>
-<p>
-Enjoy movies, TV shows, reels and creator videos anytime
-without interruptions on any device.
-</p>
-</div>
-
-<div class="info-card">
-<h3>Smart Recommendations</h3>
-<p>
-Our platform suggests personalized content based on
-your watch history and preferences.
-</p>
-</div>
-
-<div class="info-card">
-<h3>Creator Friendly Platform</h3>
-<p>
-Creators can upload videos, grow their audience and
-share their stories with viewers around the world.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<style>
-    html,body{
-width:100%;
-overflow-x:hidden;
-}
-/* MOBILE RESPONSIVE */
-
-@media(max-width:768px){
-
-.commitment-section{
-padding:60px 20px;
-}
-
-.commitment-container{
-flex-direction:column;
-gap:40px;
-}
-
-/* LEFT CONTENT */
-
-.left-content{
-text-align:center;
-}
-
-.main-heading{
-font-size:28px;
-line-height:1.3;
-}
-
-.description{
-font-size:14px;
-}
-
-.contact-btn{
-display:block;
-width:100%;
-text-align:center;
-}
-
-/* quote */
-
-.quote{
-font-size:15px;
-padding-top:20px;
-}
-
-/* RIGHT CONTENT */
-
-.right-content{
-gap:20px;
-}
-
-/* INFO CARDS */
-
-.info-card{
-padding:20px;
-text-align:left;
-}
-
-.info-card h3{
-font-size:16px;
-}
-
-.info-card p{
-font-size:14px;
-line-height:1.5;
-}
-
-}
-.commitment-section{
-position:relative;
-padding:100px 8%;
-background:url("h2.webp") center/cover no-repeat;
-overflow:hidden;
-color:white;
-}
-
-/* dark overlay */
-
-.commitment-section::before{
-content:"";
-position:absolute;
-inset:0;
-background:url(bg.jpg)center/cover no-repeat;
-z-index:1;
-}
-
-.commitment-container{
-position:relative;
-z-index:2;
-display:flex;
-gap:40px;
-flex-wrap:wrap;
-align-items:flex-start;
-width:100%;
-max-width:1200px;
-margin:auto;
-}
-
-/* LEFT SIDE */
-
-.left-content,
-.right-content{
-flex:1 1 100%;
-min-width:0;
-width:100%;
-}
-
-.tag{
-display:inline-block;
-background:rgba(255,255,255,0.15);
-padding:6px 16px;
-border-radius:20px;
-font-size:14px;
-margin-bottom:20px;
-}
-
-.main-heading{
-font-size:46px;
-margin-bottom:20px;
-line-height:1.2;
-}
-
-.main-heading em{
-font-style:italic;
-color:#8b5cf6;
-}
-
-.description{
-font-size:16px;
-color:#d1d5db;
-margin-bottom:30px;
-line-height:1.6;
-}
-
-.contact-btn{
-display:inline-block;
-background:linear-gradient(90deg,#3b82f6,#8b5cf6);
-color:white;
-padding:14px 28px;
-border-radius:40px;
-text-decoration:none;
-margin-bottom:40px;
-transition:0.3s;
-}
-
-.contact-btn:hover{
-transform:translateY(-3px);
-}
-
-.quote{
-font-size:18px;
-color:#e5e7eb;
-border-top:1px solid rgba(255,255,255,0.2);
-padding-top:30px;
-}
-
-
-/* RIGHT SIDE */
-
-.right-content{
-flex:1;
-min-width:320px;
-display:flex;
-flex-direction:column;
-gap:30px;
-}
-
-.info-card{
-background:rgba(255,255,255,0.08);
-padding:30px;
-border-radius:20px;
-backdrop-filter:blur(10px);
-}
-
-.info-card h3{
-margin-bottom:10px;
-}
-
-.info-card p{
-color:#d1d5db;
-font-size:15px;
-line-height:1.6;
+.scroll-track h1{
+    font-size:120px;
+    font-weight:800;
+    letter-spacing:5px;
+    margin-right:120px;
+
+    /* outline text */
+    color:transparent;
+    -webkit-text-stroke:1px rgba(255,255,255,0.25);
+
+    /* gradient fill (right side like your image) */
+    background:linear-gradient(90deg,#ffffff,#4da3ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    opacity:.4;
 }
-
 
 /* ANIMATION */
-
-.left-content > *{
-opacity:0;
-transform:translateX(-80px);
-transition:all 0.8s ease;
-}
-
-.commitment-section.active .left-content > *{
-opacity:1;
-transform:translateX(0);
-}
-
-.commitment-section.active .left-content > *:nth-child(1){transition-delay:0.2s;}
-.commitment-section.active .left-content > *:nth-child(2){transition-delay:0.4s;}
-.commitment-section.active .left-content > *:nth-child(3){transition-delay:0.6s;}
-.commitment-section.active .left-content > *:nth-child(4){transition-delay:0.8s;}
-.commitment-section.active .left-content > *:nth-child(5){transition-delay:1s;}
-
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.commitment-container{
-flex-direction:column;
-}
-
-.main-heading{
-font-size:32px;
-}
-
+@keyframes scrollText{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-50%);
+    }
 }
 
 </style>
+<section class="about-section">
 
+  <!-- SVG Background -->
+  <svg class="bg-svg" viewBox="0 0 1440 600">
+    <path fill="none" stroke="#00d4ff" stroke-width="2">
+      <animate attributeName="d"
+        dur="10s"
+        repeatCount="indefinite"
+        values="
+        M0,300 C300,100 900,500 1440,300;
+        M0,200 C400,400 1000,100 1440,250;
+        M0,300 C300,100 900,500 1440,300
+        " />
+    </path>
+  </svg>
 
+  <div class="container">
 
-<script>
+    <!-- LEFT CONTENT -->
+    <div class="content">
+      <p class="tag">ABOUT PLATFORM</p>
 
-const section = document.querySelector('.commitment-section');
+      <h1>
+        Experience The<br>
+        Future Of Digital<br>
+        Entertainment
+      </h1>
 
-const observer = new IntersectionObserver(entries => {
+      <p class="desc">
+        Stream smarter with ultra-fast access to movies, shows, and live content.
+        Designed for speed, built for quality, and crafted for your lifestyle.
+      </p>
 
-entries.forEach(entry => {
+      <ul class="features">
+        <li>⚡ Lightning Fast Streaming</li>
+        <li>🎬 Unlimited Movies & Series</li>
+        <li>📺 Live Channels Anytime</li>
+        <li>💎 Premium Quality Experience</li>
+      </ul>
 
-if(entry.isIntersecting){
-entry.target.classList.add('active');
-}
+      <button class="btn">Get Started →</button>
+    </div>
 
-});
+    <!-- RIGHT IMAGE -->
+    <div class="image-box">
+      <img src="h2.webp" alt="">
+    </div>
 
-},{
-threshold:0.3
-});
-
-observer.observe(section);
-
-</script>
-
-<section class="approach-section">
-
-<!-- LEFT IMAGES -->
-
-<div class="approach-images zoom-element">
-
-<div class="img-large">
-<img src="di13.webp" alt="">
-</div>
-
-<div class="img-small">
-<img src="women.webp" alt="">
-</div>
-
-</div>
-
-
-<!-- RIGHT CONTENT -->
-
-<div class="approach-content zoom-element">
-
-<span class="tag">• Our Platform</span>
-
-<h1>
-Our approach to delivering <br>
-<span>premium streaming</span>
-</h1>
-
-<p class="desc">
-Stackly focuses on delivering seamless entertainment through
-modern streaming technology, smart recommendations and
-a creator-friendly ecosystem that brings viewers and creators together.
-</p>
-
-
-<div class="info-box">
-
-<div class="info-item">
-<h3>Our Mission</h3>
-<p>
-To provide unlimited entertainment through movies, series,
-and creator content accessible anytime anywhere.
-</p>
-</div>
-
-<div class="info-item">
-<h3>Our Vision</h3>
-<p>
-To become a global entertainment platform connecting
-millions of viewers with inspiring creators and stories.
-</p>
-</div>
-
-</div>
-
-
-<div class="values">
-
-<h3>Our Values</h3>
-
-<p>
-We believe in creativity, accessibility and innovation.
-Our platform empowers creators while delivering engaging
-content experiences for viewers around the world.
-</p>
-
-</div>
-
-</div>
+  </div>
 
 </section>
-
-
-
 <style>
-.info-card{
-width:100%;
-box-sizing:border-box;
-}
-.approach-section{
-display:flex;
-gap:80px;
-padding:80px 20px;
-align-items:center;
-flex-wrap:wrap;
-background:#13101c;
-color:white;
-}
-
-/* LEFT IMAGES */
-
-.approach-images{
-flex:1;
-position:relative;
-}
-
-.img-large img{
-width:100%;
-border-radius:25px;
-}
-
-.img-small{
-position:absolute;
-bottom:-40px;
-left:-40px;
-width:65%;
-}
-
-.img-small img{
-width:100%;
-border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,0.5);
-}
-
-
-/* RIGHT CONTENT */
-
-.approach-content{
-flex:1;
-}
-
-.tag{
-background:#1f1b2e;
-padding:6px 15px;
-border-radius:20px;
-font-size:14px;
-display:inline-block;
-margin-bottom:20px;
-}
-
-.approach-content h1{
-font-size:42px;
-margin-bottom:20px;
-}
-
-.approach-content h1 span{
-color:#8b5cf6;
-}
-
-.desc{
-color:#cbd5f5;
-margin-bottom:30px;
-}
-
-.info-box{
-display:flex;
-gap:40px;
-margin-bottom:30px;
-flex-wrap:wrap;
-}
-
-.info-item h3{
-margin-bottom:8px;
-}
-
-.info-item p{
-color:#cbd5f5;
-}
-
-.values h3{
-margin-bottom:10px;
-}
-
-.values p{
-color:#cbd5f5;
-}
-
-
-/* ZOOM ANIMATION */
-
-.zoom-element{
-opacity:0;
-transform:scale(0.8);
-transition:1s ease;
-}
-
-.zoom-element.active{
-opacity:1;
-transform:scale(1);
-}
-
-
-/* FLOAT IMAGE */
-
-.img-large img{
-animation: floatZoom 6s ease-in-out infinite alternate;
-}
-
-@keyframes floatZoom{
-from{
-transform:scale(1);
-}
-to{
-transform:scale(1.03);
-}
-}
-
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.approach-section{
-flex-direction:column;
-}
-
-.img-small{
-position:relative;
-left:0;
-bottom:0;
-margin-top:20px;
-width:80%;
-}
-
-.approach-content h1{
-font-size:28px;
-}
-
-}
-/* MOBILE IMPROVED */
-
-@media(max-width:768px){
-
-.approach-section{
-flex-direction:column;
-padding:60px 20px;
-gap:40px;
-text-align:center;
-}
-
-/* IMAGE AREA */
-
-.approach-images{
-width:100%;
-}
-
-.img-large img{
-width:100%;
-max-width:320px;
-margin:auto;
-display:block;
-}
-
-/* SMALL IMAGE */
-
-.img-small{
-position:relative;
-left:auto;
-bottom:auto;
-margin:20px auto 0;
-width:70%;
-}
-
-/* RIGHT CONTENT */
-
-.approach-content{
-width:100%;
-}
-
-.approach-content h1{
-font-size:26px;
-line-height:1.3;
-margin-bottom:15px;
-}
-
-.desc{
-font-size:14px;
-line-height:1.6;
-margin-bottom:25px;
-}
-
-/* MISSION / VISION */
-
-.info-box{
-flex-direction:column;
-gap:20px;
-}
-
-.info-item{
-background:#1f1b2e;
-padding:18px;
-border-radius:12px;
-text-align:left;
-}
-
-.info-item h3{
-font-size:16px;
-margin-bottom:5px;
-}
-
-.info-item p{
-font-size:14px;
-}
-
-/* VALUES */
-
-.values{
-margin-top:10px;
-}
-
-.values p{
-font-size:14px;
-line-height:1.6;
-}
-
-}
-</style>
-
-
-
-<script>
-
-function zoomReveal(){
-
-const elements = document.querySelectorAll(".zoom-element");
-
-elements.forEach(el=>{
-
-const windowHeight = window.innerHeight;
-const elementTop = el.getBoundingClientRect().top;
-const revealPoint = 120;
-
-if(elementTop < windowHeight - revealPoint){
-el.classList.add("active");
-}
-
-});
-
-}
-
-window.addEventListener("scroll",zoomReveal);
-zoomReveal();
-
-</script>
-
-<section class="project-wrapper">
-
-<div class="project-layout">
-
-<!-- LEFT SIDEBAR -->
-
-<aside class="project-left">
-
-<div class="info-card">
-
-<h4>Content Category</h4>
-<p>Action / Thriller</p>
-
-<h4>Director</h4>
-<p>Christopher Nolan</p>
-
-<h4>Release Date</h4>
-<p>12 August, 2024</p>
-
-<h4>Duration</h4>
-<p>2 Hours 20 Minutes</p>
-
-<h4>Available On</h4>
-<p>Stackly Streaming Platform</p>
-
-</div>
-
-
-<div class="promo-card">
-
-<img src="coco.webp">
-
-<div class="promo-content">
-<h3>Watch unlimited movies & shows</h3>
-<button>Start Watching ↗</button>
-</div>
-
-</div>
-
-</aside>
-
-
-
-<!-- RIGHT CONTENT -->
-
-<div class="project-right">
-
-
-<!-- MAIN MOVIE IMAGE -->
-
-
-
-
-<!-- MOVIE OVERVIEW -->
-
-<section class="content-section">
-
-<h2>Movie Overview</h2>
-
-<p>
-This action thriller delivers an intense cinematic experience
-combining powerful storytelling, breathtaking visuals and
-a gripping narrative. The film follows a mysterious journey
-that uncovers secrets, challenges fate and pushes characters
-to their limits.
-</p>
-
-<p>
-With stunning cinematography and immersive sound design,
-the movie provides audiences with an unforgettable
-entertainment experience.
-</p>
-
-</section>
-
-
-
-<!-- PRODUCTION DETAILS -->
-
-<section class="content-section">
-
-<h2>Production & Performance</h2>
-
-<p>
-The film was produced with high production values,
-combining cutting-edge visual effects and powerful
-performances from a talented cast.
-</p>
-
-
-<div class="stats">
-
-<div>
-<h3>250M+</h3>
-<p>Views Worldwide</p>
-</div>
-
-<div>
-<h3>120+</h3>
-<p>Countries Streaming</p>
-</div>
-
-<div>
-<h3>98%</h3>
-<p>Audience Rating</p>
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- STORY HIGHLIGHTS -->
-
-<section class="content-section">
-
-<h2>Story Highlights</h2>
-
-<p>
-The storyline blends action, suspense and emotional depth,
-making it one of the most engaging films of the year.
-</p>
-
-
-<ul class="design-list">
-
-<li>High-intensity action sequences</li>
-<li>Immersive cinematic storytelling</li>
-<li>Powerful performances</li>
-<li>Stunning visual effects</li>
-
-</ul>
-
-</section>
-
-
-
-<!-- PRODUCTION CHALLENGES -->
-
-<section class="content-section">
-
-<h2>Production Challenges & Solutions</h2>
-
-
-<div class="challenge-grid">
-
-<img src="pos6.webp">
-
-<div>
-
-<h4>Production Challenge</h4>
-
-<p>
-Creating realistic large-scale action scenes while maintaining
-story continuity required advanced filming techniques
-and detailed choreography.
-</p>
-
-
-<h4>Production Solutions</h4>
-
-<p>
-The production team used a combination of practical effects,
-advanced CGI and innovative camera techniques to achieve
-a visually stunning cinematic experience.
-</p>
-
-</div>
-
-</div>
-
-
-
-</section>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<style>
-
-.project-wrapper{
-padding:100px 8%;
-background:url(h2.webp)center/cover no-repeat;
-color:white;
-}
-
-.project-layout{
-display:flex;
-gap:60px;
-align-items:flex-start;
-}
-
-/* LEFT SIDEBAR */
-
-.project-left{
-flex:0 0 320px;
-position:sticky;
-top:120px;
-height:fit-content;
-}
-
-/* INFO CARD */
-
-.info-card{
-background:#1f1b2e;
-padding:25px;
-border-radius:15px;
-margin-bottom:30px;
-}
-
-.info-card h4{
-margin-top:15px;
-font-size:14px;
-color:#cbd5f5;
-}
-
-.info-card p{
-margin-bottom:10px;
-font-weight:500;
-}
-
-
-/* PROMO */
-
-.promo-card{
-position:relative;
-border-radius:20px;
-overflow:hidden;
-}
-
-.promo-card img{
-width:100%;
-height:300px;
-object-fit:cover;
-}
-
-.promo-content{
-position:absolute;
-bottom:20px;
-left:20px;
-right:20px;
-}
-
-.promo-content button{
-margin-top:10px;
-padding:8px 20px;
-border:none;
-border-radius:25px;
-background:#8b5cf6;
-color:white;
-cursor:pointer;
-}
-
-
-/* RIGHT CONTENT */
-
-.project-right{
-flex:1;
-}
-
-.main-img{
-width:100%;
-border-radius:20px;
-margin-bottom:40px;
-}
-
-.content-section{
-margin-bottom:70px;
-}
-
-.content-section p{
-color:#cbd5f5;
-margin-bottom:15px;
-}
-
-/* STATS */
-
-.stats{
-display:flex;
-gap:20px;
-margin-top:30px;
-}
-
-.stats div{
-background:#1f1b2e;
-padding:20px;
-border-radius:15px;
-flex:1;
-text-align:center;
-}
-
-/* LIST */
-
-.design-list{
-margin-top:15px;
-padding-left:20px;
-}
-
-/* GRID */
-
-.challenge-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-margin-top:20px;
-}
-
-.challenge-grid img,
-.bottom-img{
-width:100%;
-border-radius:20px;
-margin-top:20px;
-}
-
-
-/* RESPONSIVE */
-
-@media(max-width:1000px){
-
-.project-layout{
-flex-direction:column;
-}
-
-.project-left{
-position:relative;
-top:0;
-}
-
-.challenge-grid{
-grid-template-columns:1fr;
-}
-
-.stats{
-flex-direction:column;
-}
-
-}
-
-</style>
-
-<section class="benefits">
-
-<div class="benefits-container">
-
-<!-- LEFT IMAGE AREA -->
-
-<div class="benefits-left">
-
-<img src="women.webp" class="main-person">
-
-<!-- REVIEW CARD -->
-
-<div class="review-card">
-
-<h2><span id="reviewCount">0</span>M+</h2>
-<p>User Reviews</p>
-
-<div class="stars">
-<span class="star">★</span>
-<span class="star">★</span>
-<span class="star">★</span>
-<span class="star">★</span>
-<span class="star">★</span>
-</div>
-
-<small>Average Rating <span id="ratingNumber">0.0</span>/5</small>
-
-</div>
-
-</div>
-
-
-<!-- RIGHT CONTENT -->
-
-<div class="benefits-right">
-
-<span class="tag">• Platform Benefits</span>
-
-<h2>
-Entertainment platform built for <br>
-<em>creators and viewers</em>
-</h2>
-
-<p class="desc">
-Stackly brings together movies, series, reels and creator content
-in one modern streaming platform. Discover trending entertainment,
-personalized recommendations and immersive viewing experiences.
-</p>
-
-
-<div class="benefit-grid">
-
-<div class="benefit-item">
-<div class="icon">▶</div>
-<h4>Unlimited Movies & Shows</h4>
-<p>Watch trending movies, series and videos anytime.</p>
-</div>
-
-<div class="benefit-item">
-<div class="icon">★</div>
-<h4>Smart Recommendations</h4>
-<p>AI powered suggestions based on your watch history.</p>
-</div>
-
-<div class="benefit-item">
-<div class="icon">📺</div>
-<h4>Multi-Device Streaming</h4>
-<p>Enjoy seamless streaming across mobile, tablet and TV.</p>
-</div>
-
-<div class="benefit-item highlight">
-<div class="icon">🎥</div>
-<h4>Creator Friendly Platform</h4>
-<p>Upload videos and grow your audience worldwide.</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<style>
-
-.benefits{
-position:relative;
-padding:100px 8%;
-background:url('coco.webp') center/cover no-repeat;
-color:#fff;
-}
-
-/* DARK OVERLAY */
-
-.benefits::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.65);
-z-index:0;
-}
-
-.benefits > *{
-position:relative;
-z-index:1;
-}
-
-.benefits-container{
-display:flex;
-align-items:center;
-gap:80px;
+    .about-section {
+  position: relative;
+  background: #000;
+  color: #fff;
+  padding: 100px 60px;
+  overflow: hidden;
+}
+
+/* SVG BG */
+.bg-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.3;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  position: relative;
+  z-index: 2;
 }
 
 /* LEFT */
-
-.benefits-left{
-position:relative;
-flex:1;
+.content {
+  max-width: 550px;
 }
 
-.main-person{
-width:100%;
-max-width:420px;
-border-radius:20px;
+.tag {
+  color: #ff008c;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-/* REVIEW CARD */
-
-.review-card{
-position:absolute;
-bottom:40px;
-left:40px;
-background:#1f1b2e;
-padding:25px;
-border-radius:20px;
-width:220px;
+h1 {
+  font-size: 54px;
+  line-height: 1.2;
+  font-weight: 700;
+  background: linear-gradient(90deg, #fff, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.review-card h2{
-font-size:28px;
-margin:0;
+.desc {
+  margin: 20px 0;
+  color: #aaa;
+  line-height: 1.6;
 }
 
-.stars{
-margin:10px 0;
+/* Features */
+.features {
+  list-style: none;
+  margin: 20px 0;
 }
 
-.star{
-font-size:20px;
-color:#8b5cf6;
+.features li {
+  margin: 10px 0;
+  color: #ddd;
+  transition: 0.3s;
 }
 
-/* RIGHT */
-
-.benefits-right{
-flex:1;
+.features li:hover {
+  color: #ff008c;
+  transform: translateX(10px);
 }
 
-.tag{
-background:#1f1b2e;
-padding:6px 16px;
-border-radius:20px;
-font-size:14px;
+/* Button */
+.btn {
+  margin-top: 20px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #ff008c, #00d4ff);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.benefits-right h2{
-font-size:42px;
-margin:20px 0;
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff008c;
 }
 
-.benefits-right em{
-color:#8b5cf6;
+/* RIGHT IMAGE */
+.image-box {
+  width: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+  animation: float 4s ease-in-out infinite;
 }
 
-.desc{
-color:#cbd5f5;
-margin-bottom:40px;
+.image-box img {
+  width: 100%;
+  display: block;
 }
 
-/* GRID */
-
-.benefit-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:40px;
+/* Floating animation */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
-.benefit-item .icon{
-width:50px;
-height:50px;
-background:#8b5cf6;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-bottom:10px;
+/* Responsive */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .image-box {
+    width: 100%;
+  }
+}
+</style>
+<script>
+    // Fade-in on scroll
+const content = document.querySelector('.content');
+
+window.addEventListener('scroll', () => {
+  const top = content.getBoundingClientRect().top;
+  if (top < window.innerHeight - 100) {
+    content.style.opacity = "1";
+    content.style.transform = "translateY(0)";
+  }
+});
+
+// initial state
+content.style.opacity = "0";
+content.style.transform = "translateY(50px)";
+content.style.transition = "0.8s";
+</script>
+<section class="pricing">
+
+  <!-- SVG Animated Graph BG -->
+  <svg class="bg-graph" viewBox="0 0 1440 600">
+    <path stroke="#00d4ff" stroke-width="2" fill="none">
+      <animate attributeName="d" dur="8s" repeatCount="indefinite"
+        values="
+        M0,400 C300,200 900,500 1440,300;
+        M0,350 C400,450 1000,100 1440,250;
+        M0,400 C300,200 900,500 1440,300
+        " />
+    </path>
+  </svg>
+
+  <p class="tag">CHOOSE YOUR PLAN</p>
+  <h1>Plans For Every Viewer</h1>
+
+  <div class="cards">
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <h2>3-Month Plan</h2>
+<a href="404.html" class="subscribe-btn">Subscribe Now →</a>     
+
+      <ul>
+        <li>✔ Save $5</li>
+        <li>✔ All Features Included</li>
+        <li>✔ 1 Device Access</li>
+        <li>✔ Free Updates</li>
+      </ul>
+
+      <h3>$39.99 <span>/month</span></h3>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card highlight">
+      <h2>6-Month Plan</h2>
+
+    <a href="404.html" class="subscribe-btn">Subscribe Now →</a>
+
+      <ul>
+        <li>✔ Save $10</li>
+        <li>✔ All Features Included</li>
+        <li>✔ 2 Device Access</li>
+        <li>✔ 24/7 Support</li>
+      </ul>
+
+      <h3>$74.99 <span>/month</span></h3>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+      <h2>Annual Plan</h2>
+
+      <a href="404.html" class="subscribe-btn">Subscribe Now →</a>      
+
+      <ul>
+        <li>✔ Save $20</li>
+        <li>✔ All Features Included</li>
+        <li>✔ 3 Device Access</li>
+        <li>✔ Premium Channels</li>
+      </ul>
+
+      <h3>$129.99 <span>/month</span></h3>
+    </div>
+
+  </div>
+
+</section>
+<style>
+.pricing {
+  background: #000;
+  color: white;
+  text-align: center;
+  padding: 100px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-btn {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  border-radius: 30px;
+  border: 1px solid #555;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 20px;
+  transition: 0.3s;
 }
 
-.highlight .icon{
-background:#3b82f6;
+.subscribe-btn:hover {
+  background: linear-gradient(45deg, #ff008c, #00d4ff);
+  border: none;
+}
+/* SVG BG */
+.bg-graph {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.25;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-.benefits-container{
-flex-direction:column;
+/* Heading */
+.tag {
+  color: #ff008c;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
-.review-card{
-position:relative;
-left:auto;
-bottom:auto;
-margin-top:20px;
+h1 {
+  font-size: 48px;
+  margin-bottom: 60px;
 }
 
-.benefit-grid{
-grid-template-columns:1fr;
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
+/* Card style */
+.card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+  padding: 40px;
+  width: 300px;
+  text-align: left;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+
+  /* animation start */
+  transform: translateX(100px);
+  opacity: 0;
+  transition: 0.6s;
 }
 
+.card.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Highlight middle */
+.highlight {
+  border: 1px solid #00d4ff;
+  box-shadow: 0 0 30px rgba(0,212,255,0.3);
+}
+
+/* Title */
+.card h2 {
+  margin-bottom: 20px;
+}
+
+/* Button */
+.card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: 1px solid #555;
+  background: transparent;
+  color: white;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: linear-gradient(45deg, #ff008c, #00d4ff);
+  border: none;
+}
+
+/* List */
+.card ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.card ul li {
+  margin: 10px 0;
+  color: #ccc;
+}
+
+/* Price */
+.card h3 {
+  color: #ff008c;
+  font-size: 32px;
+}
+
+.card span {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Hover */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 20px rgba(255,0,140,0.4);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+<script>
+    const cards = document.querySelectorAll('.card');
+
+window.addEventListener('load', () => {
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add('show');
+    }, index * 200); // stagger animation
+  });
+});
+</script>
+<!-- ===== FEATURED SECTION ===== -->
+<section class="featured">
+
+  <h2 class="section-title">⭐ Top Web Series For You</h2>
+
+  <div class="featured-container">
+
+    <!-- LEFT IMAGE -->
+    <div class="featured-image">
+      <img src="h1.webp" alt="series">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="featured-content">
+      <h1>Featured Web Series</h1>
+
+      <p>
+        Dive into multi-season storytelling, powerful characters, and addictive episodes.
+        Stream now in HD & 4K.
+      </p>
+
+      <div class="buttons">
+        <button class="watch-btn redirect-btn">▶ Watch Now</button>
+        <button class="list-btn redirect-btn">+ Add to Watchlist</button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+/* SECTION */
+.featured {
+  background: #000;
+  color: #fff;
+  padding: 80px 60px;
+}
+
+/* Title */
+.section-title {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+/* Layout */
+.featured-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* IMAGE */
+.featured-image {
+  flex: 1;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.featured-image img {
+  width: 100%;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+/* Gradient overlay */
+.featured-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+/* Hover zoom */
+.featured-image:hover img {
+  transform: scale(1.05);
+}
+
+/* CONTENT */
+.featured-content {
+  flex: 1;
+}
+
+.featured-content h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #fff, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.featured-content p {
+  color: #aaa;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+/* Watch Button */
+.watch-btn {
+  background: linear-gradient(45deg, #ff008c, #ff4da6);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.watch-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff008c;
+}
+
+/* Watchlist Button */
+.list-btn {
+  background: transparent;
+  border: 1px solid #555;
+  padding: 14px 28px;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.list-btn:hover {
+  background: linear-gradient(45deg, #00d4ff, #ff008c);
+  border: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .featured-container {
+    flex-direction: column;
+  }
+
+  .featured-content h1 {
+    font-size: 28px;
+  }
+}
 </style>
 
-
-
 <script>
-
-/* Reviews Counter */
-
-let count=0;
-let target=4;
-
-let counter=setInterval(()=>{
-
-count+=0.1;
-
-document.getElementById("reviewCount").innerText=count.toFixed(1);
-
-if(count>=target){
-
-document.getElementById("reviewCount").innerText=target;
-clearInterval(counter);
-
-}
-
-},40);
-
-
-/* Rating Counter */
-
-let ratingCount=0;
-let ratingTarget=4.5;
-
-let ratingInterval=setInterval(()=>{
-
-ratingCount+=0.1;
-
-document.getElementById("ratingNumber").innerText=ratingCount.toFixed(1);
-
-if(ratingCount>=ratingTarget){
-
-document.getElementById("ratingNumber").innerText=ratingTarget;
-clearInterval(ratingInterval);
-
-}
-
-},80);
-
+/* Redirect ALL buttons to 404 page */
+document.querySelectorAll('.redirect-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    window.location.href = "404.html";
+  });
+});
 </script>
 
-<section class="faq-section">
+<section class="hero-scroll-text">
 
-<div class="faq-container">
-
-<div class="faq-header">
-<span class="tag">• FAQ</span>
-
-<h2>
-Frequently asked <br>
-<span>questions</span>
-</h2>
-
-<p>
-Find answers about streaming, subscriptions, creators and
-how the Stackly platform works.
-</p>
-</div>
-
-
-<div class="faq-list">
-
-<div class="faq-item">
-<button class="faq-question">
-What is Stackly streaming platform?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-Stackly is an online entertainment platform where you can
-watch movies, TV shows, short videos and creator content
-all in one place.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-Is Stackly free to use?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-Yes. Stackly offers free streaming content, while premium
-subscriptions unlock exclusive movies, shows and features.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-Can creators upload their own videos?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-Yes. Creators can upload videos, grow their audience and
-share content globally through the Stackly creator platform.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-Which devices support Stackly?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-Stackly works on smartphones, tablets, smart TVs,
-laptops and desktop browsers for seamless streaming.
-</p>
-</div>
-</div>
-
-
-<div class="faq-item">
-<button class="faq-question">
-How does the recommendation system work?
-<span>+</span>
-</button>
-
-<div class="faq-answer">
-<p>
-Our smart recommendation engine suggests movies
-and shows based on your watch history and preferences.
-</p>
-</div>
-</div>
-
-</div>
-
+<div class="scroll-wrapper">
+  <div class="scroll-track">
+    <h1>STACKLY YOUTUBE</h1>
+    <h1>MOVIES AND DRAMA</h1> <!-- duplicate for loop -->
+  </div>
 </div>
 
 </section>
 
-
-
 <style>
 
-.faq-section{
-padding:100px 8%;
-background:url(h1.webp)center/cover no-repeat;
-color:white;
+/* SECTION */
+.hero-scroll-text{
+    position:relative;
+    height:200px;
+    overflow:hidden;
+    background:linear-gradient(90deg,#020617,#031a33,#020617);
+    display:flex;
+    align-items:center;
 }
 
-.faq-container{
-max-width:900px;
-margin:auto;
+/* WRAPPER */
+.scroll-wrapper{
+    width:100%;
+    overflow:hidden;
 }
 
-.faq-header{
-text-align:center;
-margin-bottom:60px;
+/* TRACK */
+.scroll-track{
+    display:flex;
+    width:max-content;
+    animation:scrollText 18s linear infinite;
 }
 
-.tag{
-background:#1f1b2e;
-padding:6px 16px;
-border-radius:20px;
-font-size:14px;
+/* TEXT */
+.scroll-track h1{
+    font-size:120px;
+    font-weight:800;
+    letter-spacing:5px;
+    margin-right:120px;
+
+    /* outline text */
+    color:transparent;
+    -webkit-text-stroke:1px rgba(255,255,255,0.25);
+
+    /* gradient fill (right side like your image) */
+    background:linear-gradient(90deg,#ffffff,#4da3ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    opacity:.4;
 }
 
-.faq-header h2{
-font-size:40px;
-margin:20px 0;
-}
-
-.faq-header span{
-color:#8b5cf6;
-}
-
-.faq-header p{
-color:#cbd5f5;
-}
-
-
-/* FAQ LIST */
-
-.faq-list{
-display:flex;
-flex-direction:column;
-gap:20px;
-}
-
-.faq-item{
-background:#1f1b2e;
-border-radius:15px;
-overflow:hidden;
-}
-
-.faq-question{
-width:100%;
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:none;
-border:none;
-color:white;
-font-size:16px;
-cursor:pointer;
-}
-
-.faq-question span{
-font-size:22px;
-color:#8b5cf6;
-}
-
-.faq-answer{
-max-height:0;
-overflow:hidden;
-transition:0.4s ease;
-padding:0 20px;
-}
-
-.faq-answer p{
-color:#cbd5f5;
-padding-bottom:20px;
-}
-
-
-/* ACTIVE */
-
-.faq-item.active .faq-answer{
-max-height:200px;
-}
-
-.faq-item.active .faq-question span{
-transform:rotate(45deg);
-}
-
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.faq-header h2{
-font-size:28px;
-}
-
+/* ANIMATION */
+@keyframes scrollText{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-50%);
+    }
 }
 
 </style>
+<!-- ===== FEATURE EXPERIENCE SECTION ===== -->
+<section class="experience">
 
+  <div class="experience-container">
 
+    <!-- LEFT IMAGE -->
+    <div class="exp-image">
+      <img src="h2.webp" alt="tv">
+
+      <!-- Overlay Card -->
+      <div class="overlay-card">
+        <h4>Now Playing</h4>
+        <p>Premium Original Series</p>
+      </div>
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="exp-content">
+
+      <p class="tag">FEATURED EXPERIENCE</p>
+
+      <h1>
+        Feel Every Scene<br>
+        Like You're Inside It
+      </h1>
+
+      <p class="desc">
+        Dive into ultra HD streaming with immersive sound and lightning-fast playback.
+        Your entertainment, upgraded to a cinematic level.
+      </p>
+
+      <ul class="features">
+        <li>📺 4K Ultra HD Streaming</li>
+        <li>⚡ Instant Playback (No Buffer)</li>
+        <li>🎧 Dolby Atmos Sound</li>
+      </ul>
+
+      <button class="explore-btn">Explore Now →</button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+/* SECTION */
+.experience {
+  background: #000;
+  color: #fff;
+  padding: 100px 60px;
+}
+
+/* Layout */
+.experience-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* IMAGE */
+.exp-image {
+  flex: 1;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.exp-image img {
+  width: 100%;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+/* Hover zoom */
+.exp-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Overlay Card */
+.overlay-card {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 15px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.overlay-card h4 {
+  margin-bottom: 5px;
+}
+
+.overlay-card p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* CONTENT */
+.exp-content {
+  flex: 1;
+}
+
+.tag {
+  color: #ff008c;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.exp-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.desc {
+  color: #aaa;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* Features */
+.features {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.features li {
+  margin: 10px 0;
+  color: #ddd;
+  transition: 0.3s;
+}
+
+.features li:hover {
+  color: #ff008c;
+  transform: translateX(10px);
+}
+
+/* Button */
+.explore-btn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #ff008c, #ff4da6);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.explore-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff008c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .experience-container {
+    flex-direction: column;
+  }
+
+  .exp-content h1 {
+    font-size: 30px;
+  }
+}
+</style>
 
 <script>
-
-const faqItems = document.querySelectorAll(".faq-item");
-
-faqItems.forEach(item => {
-
-const btn = item.querySelector(".faq-question");
-
-btn.addEventListener("click",()=>{
-
-item.classList.toggle("active");
-
+/* Redirect Explore button to 404 */
+document.querySelector('.explore-btn').addEventListener('click', () => {
+  window.location.href = "404.html";
 });
-
-});
-
 </script>
 
 <footer class="stackly-footer">
